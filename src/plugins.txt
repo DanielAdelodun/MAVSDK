@@ -13,6 +13,7 @@ geofence
 gimbal
 gripper
 info
+lights
 log_files
 manual_control
 mission

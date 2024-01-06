@@ -82,6 +82,10 @@ int GrpcServer::run()
     builder.RegisterService(&_info_service);
 #endif
 
+#ifdef LIGHTS_ENABLED
+    builder.RegisterService(&_lights_service);
+#endif
+
 #ifdef LOG_FILES_ENABLED
     builder.RegisterService(&_log_files_service);
 #endif
@@ -243,6 +247,10 @@ void GrpcServer::stop()
 
 #ifdef INFO_ENABLED
         _info_service.stop();
+#endif
+
+#ifdef LIGHTS_ENABLED
+        _lights_service.stop();
 #endif
 
 #ifdef LOG_FILES_ENABLED

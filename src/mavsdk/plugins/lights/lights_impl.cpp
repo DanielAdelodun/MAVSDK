@@ -43,7 +43,7 @@ Lights::Result LightsImpl::set_matrix(Lights::LightMatrix matrix)
                     0,
                     8,
                     strip_id,
-                    matrix.strips[i].lights.begin()); // TODO: fix out of bounds
+                    &(matrix.strips[strip_id].lights[0])); // TODO: fix out of bounds
                 return message;
             }) ?
                 Lights::Result::Success :
@@ -71,7 +71,7 @@ Lights::Result LightsImpl::set_strip(uint32_t strip_id, Lights::LightStrip strip
             0,
             8,
             static_cast<uint8_t>(strip_id),
-            strip.lights.begin()); // TODO: fix out of bounds
+            &(strip.lights[0])); // TODO: fix out of bounds
         return message;
     }) ?
                Lights::Result::Success :

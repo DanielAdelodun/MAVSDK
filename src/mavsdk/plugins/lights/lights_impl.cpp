@@ -38,7 +38,7 @@ void LightsImpl::disable() {}
 Lights::Result LightsImpl::set_matrix(Lights::LightMatrix matrix)
 {
     // Iterate over all strips and send them one by one.
-    for (int i = 0; i < matrix.strips.size(); i++) {
+    for (int strip_id = 0; strip_id < matrix.strips.size(); strip_id++) {
         auto result = _system_impl->queue_message([&](MavlinkAddress mavlink_address, uint8_t channel) {
             mavlink_message_t message;
             mavlink_msg_led_strip_config_pack_chan(

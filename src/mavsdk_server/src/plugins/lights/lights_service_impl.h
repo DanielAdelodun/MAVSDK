@@ -41,7 +41,7 @@ public:
         response->set_allocated_lights_result(rpc_lights_result);
     }
 
-    static rpc::lights::LightResult::Result
+    static rpc::lights::LightsResult::Result
     translateToRpcResult(const mavsdk::Lights::Result& result)
     {
         switch (result) {
@@ -49,46 +49,46 @@ public:
                 LogErr() << "Unknown result enum value: " << static_cast<int>(result);
             // FALLTHROUGH
             case mavsdk::Lights::Result::Unknown:
-                return rpc::lights::LightResult_Result_RESULT_UNKNOWN;
+                return rpc::lights::LightsResult_Result_RESULT_UNKNOWN;
             case mavsdk::Lights::Result::Success:
-                return rpc::lights::LightResult_Result_RESULT_SUCCESS;
+                return rpc::lights::LightsResult_Result_RESULT_SUCCESS;
             case mavsdk::Lights::Result::NoSystem:
-                return rpc::lights::LightResult_Result_RESULT_NO_SYSTEM;
+                return rpc::lights::LightsResult_Result_RESULT_NO_SYSTEM;
             case mavsdk::Lights::Result::ConnectionError:
-                return rpc::lights::LightResult_Result_RESULT_CONNECTION_ERROR;
+                return rpc::lights::LightsResult_Result_RESULT_CONNECTION_ERROR;
             case mavsdk::Lights::Result::Busy:
-                return rpc::lights::LightResult_Result_RESULT_BUSY;
+                return rpc::lights::LightsResult_Result_RESULT_BUSY;
             case mavsdk::Lights::Result::OutOfBounds:
-                return rpc::lights::LightResult_Result_RESULT_OUT_OF_BOUNDS;
+                return rpc::lights::LightsResult_Result_RESULT_OUT_OF_BOUNDS;
             case mavsdk::Lights::Result::Timeout:
-                return rpc::lights::LightResult_Result_RESULT_TIMEOUT;
+                return rpc::lights::LightsResult_Result_RESULT_TIMEOUT;
             case mavsdk::Lights::Result::Failed:
-                return rpc::lights::LightResult_Result_RESULT_FAILED;
+                return rpc::lights::LightsResult_Result_RESULT_FAILED;
         }
     }
 
     static mavsdk::Lights::Result
-    translateFromRpcResult(const rpc::lights::LightResult::Result result)
+    translateFromRpcResult(const rpc::lights::LightsResult::Result result)
     {
         switch (result) {
             default:
                 LogErr() << "Unknown result enum value: " << static_cast<int>(result);
             // FALLTHROUGH
-            case rpc::lights::LightResult_Result_RESULT_UNKNOWN:
+            case rpc::lights::LightsResult_Result_RESULT_UNKNOWN:
                 return mavsdk::Lights::Result::Unknown;
-            case rpc::lights::LightResult_Result_RESULT_SUCCESS:
+            case rpc::lights::LightsResult_Result_RESULT_SUCCESS:
                 return mavsdk::Lights::Result::Success;
-            case rpc::lights::LightResult_Result_RESULT_NO_SYSTEM:
+            case rpc::lights::LightsResult_Result_RESULT_NO_SYSTEM:
                 return mavsdk::Lights::Result::NoSystem;
-            case rpc::lights::LightResult_Result_RESULT_CONNECTION_ERROR:
+            case rpc::lights::LightsResult_Result_RESULT_CONNECTION_ERROR:
                 return mavsdk::Lights::Result::ConnectionError;
-            case rpc::lights::LightResult_Result_RESULT_BUSY:
+            case rpc::lights::LightsResult_Result_RESULT_BUSY:
                 return mavsdk::Lights::Result::Busy;
-            case rpc::lights::LightResult_Result_RESULT_OUT_OF_BOUNDS:
+            case rpc::lights::LightsResult_Result_RESULT_OUT_OF_BOUNDS:
                 return mavsdk::Lights::Result::OutOfBounds;
-            case rpc::lights::LightResult_Result_RESULT_TIMEOUT:
+            case rpc::lights::LightsResult_Result_RESULT_TIMEOUT:
                 return mavsdk::Lights::Result::Timeout;
-            case rpc::lights::LightResult_Result_RESULT_FAILED:
+            case rpc::lights::LightsResult_Result_RESULT_FAILED:
                 return mavsdk::Lights::Result::Failed;
         }
     }

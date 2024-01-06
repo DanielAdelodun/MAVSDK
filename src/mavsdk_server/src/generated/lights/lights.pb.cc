@@ -42,7 +42,7 @@ PROTOBUF_CONSTEXPR SetMatrixResponse::SetMatrixResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.light_result_)*/nullptr} {}
+  , /*decltype(_impl_.lights_result_)*/nullptr} {}
 struct SetMatrixResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SetMatrixResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetMatrixResponseDefaultTypeInternal() {}
@@ -76,7 +76,7 @@ PROTOBUF_CONSTEXPR SetStripResponse::SetStripResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.light_result_)*/nullptr} {}
+  , /*decltype(_impl_.lights_result_)*/nullptr} {}
 struct SetStripResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SetStripResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetStripResponseDefaultTypeInternal() {}
@@ -108,7 +108,7 @@ PROTOBUF_CONSTEXPR FollowFlightModeResponse::FollowFlightModeResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.light_result_)*/nullptr} {}
+  , /*decltype(_impl_.lights_result_)*/nullptr} {}
 struct FollowFlightModeResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR FollowFlightModeResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~FollowFlightModeResponseDefaultTypeInternal() {}
@@ -120,7 +120,7 @@ struct FollowFlightModeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FollowFlightModeResponseDefaultTypeInternal _FollowFlightModeResponse_default_instance_;
 template <typename>
-PROTOBUF_CONSTEXPR LightResult::LightResult(
+PROTOBUF_CONSTEXPR LightsResult::LightsResult(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.result_str_)*/ {
     &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
@@ -129,16 +129,16 @@ PROTOBUF_CONSTEXPR LightResult::LightResult(
   , /*decltype(_impl_.result_)*/ 0
 
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct LightResultDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LightResultDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~LightResultDefaultTypeInternal() {}
+struct LightsResultDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR LightsResultDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~LightsResultDefaultTypeInternal() {}
   union {
-    LightResult _instance;
+    LightsResult _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightResultDefaultTypeInternal _LightResult_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsResultDefaultTypeInternal _LightsResult_default_instance_;
 template <typename>
 PROTOBUF_CONSTEXPR LightStrip::LightStrip(
     ::_pbi::ConstantInitialized): _impl_{
@@ -198,7 +198,7 @@ const ::uint32_t TableStruct_lights_2flights_2eproto::offsets[] PROTOBUF_SECTION
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::SetMatrixResponse, _impl_.light_result_),
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::SetMatrixResponse, _impl_.lights_result_),
     0,
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::SetStripRequest, _impl_._has_bits_),
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::SetStripRequest, _internal_metadata_),
@@ -220,7 +220,7 @@ const ::uint32_t TableStruct_lights_2flights_2eproto::offsets[] PROTOBUF_SECTION
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::SetStripResponse, _impl_.light_result_),
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::SetStripResponse, _impl_.lights_result_),
     0,
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::FollowFlightModeRequest, _internal_metadata_),
@@ -239,18 +239,18 @@ const ::uint32_t TableStruct_lights_2flights_2eproto::offsets[] PROTOBUF_SECTION
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::FollowFlightModeResponse, _impl_.light_result_),
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::FollowFlightModeResponse, _impl_.lights_result_),
     0,
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightResult, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightsResult, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightResult, _impl_.result_),
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightResult, _impl_.result_str_),
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightsResult, _impl_.result_),
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightsResult, _impl_.result_str_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightStrip, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -279,7 +279,7 @@ static const ::_pbi::MigrationSchema
         { 32, 41, -1, sizeof(::mavsdk::rpc::lights::SetStripResponse)},
         { 42, -1, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeRequest)},
         { 51, 60, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeResponse)},
-        { 61, -1, -1, sizeof(::mavsdk::rpc::lights::LightResult)},
+        { 61, -1, -1, sizeof(::mavsdk::rpc::lights::LightsResult)},
         { 71, -1, -1, sizeof(::mavsdk::rpc::lights::LightStrip)},
         { 80, -1, -1, sizeof(::mavsdk::rpc::lights::LightMatrix)},
 };
@@ -291,7 +291,7 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::mavsdk::rpc::lights::_SetStripResponse_default_instance_._instance,
     &::mavsdk::rpc::lights::_FollowFlightModeRequest_default_instance_._instance,
     &::mavsdk::rpc::lights::_FollowFlightModeResponse_default_instance_._instance,
-    &::mavsdk::rpc::lights::_LightResult_default_instance_._instance,
+    &::mavsdk::rpc::lights::_LightsResult_default_instance_._instance,
     &::mavsdk::rpc::lights::_LightStrip_default_instance_._instance,
     &::mavsdk::rpc::lights::_LightMatrix_default_instance_._instance,
 };
@@ -299,34 +299,34 @@ const char descriptor_table_protodef_lights_2flights_2eproto[] PROTOBUF_SECTION_
     "\n\023lights/lights.proto\022\021mavsdk.rpc.lights"
     "\032\024mavsdk_options.proto\"I\n\020SetMatrixReque"
     "st\0225\n\rmatrix_colors\030\001 \001(\0132\036.mavsdk.rpc.l"
-    "ights.LightMatrix\"I\n\021SetMatrixResponse\0224"
-    "\n\014light_result\030\001 \001(\0132\036.mavsdk.rpc.lights"
-    ".LightResult\"X\n\017SetStripRequest\022\020\n\010strip"
-    "_id\030\001 \001(\r\0223\n\014strip_colors\030\002 \001(\0132\035.mavsdk"
-    ".rpc.lights.LightStrip\"H\n\020SetStripRespon"
-    "se\0224\n\014light_result\030\001 \001(\0132\036.mavsdk.rpc.li"
-    "ghts.LightResult\")\n\027FollowFlightModeRequ"
-    "est\022\016\n\006enable\030\001 \001(\010\"P\n\030FollowFlightModeR"
-    "esponse\0224\n\014light_result\030\001 \001(\0132\036.mavsdk.r"
-    "pc.lights.LightResult\"\220\002\n\013LightResult\0225\n"
-    "\006result\030\001 \001(\0162%.mavsdk.rpc.lights.LightR"
-    "esult.Result\022\022\n\nresult_str\030\002 \001(\t\"\265\001\n\006Res"
-    "ult\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCES"
-    "S\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONN"
-    "ECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020\004\022\030\n\024RESUL"
-    "T_OUT_OF_BOUNDS\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022\021\n"
-    "\rRESULT_FAILED\020\007\"\034\n\nLightStrip\022\016\n\006lights"
-    "\030\001 \003(\r\"<\n\013LightMatrix\022-\n\006strips\030\001 \003(\0132\035."
-    "mavsdk.rpc.lights.LightStrip2\273\002\n\rLightsS"
-    "ervice\022\\\n\tSetMatrix\022#.mavsdk.rpc.lights."
-    "SetMatrixRequest\032$.mavsdk.rpc.lights.Set"
-    "MatrixResponse\"\004\200\265\030\001\022Y\n\010SetStrip\022\".mavsd"
-    "k.rpc.lights.SetStripRequest\032#.mavsdk.rp"
-    "c.lights.SetStripResponse\"\004\200\265\030\001\022q\n\020Follo"
-    "wFlightMode\022*.mavsdk.rpc.lights.FollowFl"
-    "ightModeRequest\032+.mavsdk.rpc.lights.Foll"
-    "owFlightModeResponse\"\004\200\265\030\001B\037\n\020io.mavsdk."
-    "lightsB\013LightsProtob\006proto3"
+    "ights.LightMatrix\"K\n\021SetMatrixResponse\0226"
+    "\n\rlights_result\030\001 \001(\0132\037.mavsdk.rpc.light"
+    "s.LightsResult\"X\n\017SetStripRequest\022\020\n\010str"
+    "ip_id\030\001 \001(\r\0223\n\014strip_colors\030\002 \001(\0132\035.mavs"
+    "dk.rpc.lights.LightStrip\"J\n\020SetStripResp"
+    "onse\0226\n\rlights_result\030\001 \001(\0132\037.mavsdk.rpc"
+    ".lights.LightsResult\")\n\027FollowFlightMode"
+    "Request\022\016\n\006enable\030\001 \001(\010\"R\n\030FollowFlightM"
+    "odeResponse\0226\n\rlights_result\030\001 \001(\0132\037.mav"
+    "sdk.rpc.lights.LightsResult\"\222\002\n\014LightsRe"
+    "sult\0226\n\006result\030\001 \001(\0162&.mavsdk.rpc.lights"
+    ".LightsResult.Result\022\022\n\nresult_str\030\002 \001(\t"
+    "\"\265\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESUL"
+    "T_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RES"
+    "ULT_CONNECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020\004\022"
+    "\030\n\024RESULT_OUT_OF_BOUNDS\020\005\022\022\n\016RESULT_TIME"
+    "OUT\020\006\022\021\n\rRESULT_FAILED\020\007\"\034\n\nLightStrip\022\016"
+    "\n\006lights\030\001 \003(\r\"<\n\013LightMatrix\022-\n\006strips\030"
+    "\001 \003(\0132\035.mavsdk.rpc.lights.LightStrip2\273\002\n"
+    "\rLightsService\022\\\n\tSetMatrix\022#.mavsdk.rpc"
+    ".lights.SetMatrixRequest\032$.mavsdk.rpc.li"
+    "ghts.SetMatrixResponse\"\004\200\265\030\001\022Y\n\010SetStrip"
+    "\022\".mavsdk.rpc.lights.SetStripRequest\032#.m"
+    "avsdk.rpc.lights.SetStripResponse\"\004\200\265\030\001\022"
+    "q\n\020FollowFlightMode\022*.mavsdk.rpc.lights."
+    "FollowFlightModeRequest\032+.mavsdk.rpc.lig"
+    "hts.FollowFlightModeResponse\"\004\200\265\030\001B\037\n\020io"
+    ".mavsdk.lightsB\013LightsProtob\006proto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_lights_2flights_2eproto_deps[1] =
     {
@@ -336,7 +336,7 @@ static ::absl::once_flag descriptor_table_lights_2flights_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_lights_2flights_2eproto = {
     false,
     false,
-    1227,
+    1235,
     descriptor_table_protodef_lights_2flights_2eproto,
     "lights/lights.proto",
     &descriptor_table_lights_2flights_2eproto_once,
@@ -371,11 +371,11 @@ static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_lights_2flights_2eproto(&
 namespace mavsdk {
 namespace rpc {
 namespace lights {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LightResult_Result_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LightsResult_Result_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_lights_2flights_2eproto);
   return file_level_enum_descriptors_lights_2flights_2eproto[0];
 }
-bool LightResult_Result_IsValid(int value) {
+bool LightsResult_Result_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -393,17 +393,17 @@ bool LightResult_Result_IsValid(int value) {
 #if (__cplusplus < 201703) && \
   (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-constexpr LightResult_Result LightResult::RESULT_UNKNOWN;
-constexpr LightResult_Result LightResult::RESULT_SUCCESS;
-constexpr LightResult_Result LightResult::RESULT_NO_SYSTEM;
-constexpr LightResult_Result LightResult::RESULT_CONNECTION_ERROR;
-constexpr LightResult_Result LightResult::RESULT_BUSY;
-constexpr LightResult_Result LightResult::RESULT_OUT_OF_BOUNDS;
-constexpr LightResult_Result LightResult::RESULT_TIMEOUT;
-constexpr LightResult_Result LightResult::RESULT_FAILED;
-constexpr LightResult_Result LightResult::Result_MIN;
-constexpr LightResult_Result LightResult::Result_MAX;
-constexpr int LightResult::Result_ARRAYSIZE;
+constexpr LightsResult_Result LightsResult::RESULT_UNKNOWN;
+constexpr LightsResult_Result LightsResult::RESULT_SUCCESS;
+constexpr LightsResult_Result LightsResult::RESULT_NO_SYSTEM;
+constexpr LightsResult_Result LightsResult::RESULT_CONNECTION_ERROR;
+constexpr LightsResult_Result LightsResult::RESULT_BUSY;
+constexpr LightsResult_Result LightsResult::RESULT_OUT_OF_BOUNDS;
+constexpr LightsResult_Result LightsResult::RESULT_TIMEOUT;
+constexpr LightsResult_Result LightsResult::RESULT_FAILED;
+constexpr LightsResult_Result LightsResult::Result_MIN;
+constexpr LightsResult_Result LightsResult::Result_MAX;
+constexpr int LightsResult::Result_ARRAYSIZE;
 
 #endif  // (__cplusplus < 201703) &&
         // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
@@ -619,15 +619,15 @@ class SetMatrixResponse::_Internal {
   using HasBits = decltype(std::declval<SetMatrixResponse>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
     8 * PROTOBUF_FIELD_OFFSET(SetMatrixResponse, _impl_._has_bits_);
-  static const ::mavsdk::rpc::lights::LightResult& light_result(const SetMatrixResponse* msg);
-  static void set_has_light_result(HasBits* has_bits) {
+  static const ::mavsdk::rpc::lights::LightsResult& lights_result(const SetMatrixResponse* msg);
+  static void set_has_lights_result(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-const ::mavsdk::rpc::lights::LightResult&
-SetMatrixResponse::_Internal::light_result(const SetMatrixResponse* msg) {
-  return *msg->_impl_.light_result_;
+const ::mavsdk::rpc::lights::LightsResult&
+SetMatrixResponse::_Internal::lights_result(const SetMatrixResponse* msg) {
+  return *msg->_impl_.lights_result_;
 }
 SetMatrixResponse::SetMatrixResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -640,11 +640,11 @@ SetMatrixResponse::SetMatrixResponse(const SetMatrixResponse& from)
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.light_result_){nullptr}};
+    , decltype(_impl_.lights_result_){nullptr}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.light_result_ = new ::mavsdk::rpc::lights::LightResult(*from._impl_.light_result_);
+    _this->_impl_.lights_result_ = new ::mavsdk::rpc::lights::LightsResult(*from._impl_.lights_result_);
   }
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.SetMatrixResponse)
 }
@@ -654,7 +654,7 @@ inline void SetMatrixResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.light_result_){nullptr}
+    , decltype(_impl_.lights_result_){nullptr}
   };
 }
 
@@ -669,7 +669,7 @@ SetMatrixResponse::~SetMatrixResponse() {
 
 inline void SetMatrixResponse::SharedDtor() {
   ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.light_result_;
+  if (this != internal_default_instance()) delete _impl_.lights_result_;
 }
 
 void SetMatrixResponse::SetCachedSize(int size) const {
@@ -684,8 +684,8 @@ void SetMatrixResponse::Clear() {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.light_result_ != nullptr);
-    _impl_.light_result_->Clear();
+    ABSL_DCHECK(_impl_.lights_result_ != nullptr);
+    _impl_.lights_result_->Clear();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -698,10 +698,10 @@ const char* SetMatrixResponse::_InternalParse(const char* ptr, ::_pbi::ParseCont
     ::uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightResult light_result = 1;
+      // .mavsdk.rpc.lights.LightsResult lights_result = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_light_result(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_lights_result(), ptr);
           CHK_(ptr);
         } else {
           goto handle_unusual;
@@ -738,11 +738,11 @@ failure:
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::light_result(this),
-        _Internal::light_result(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(1, _Internal::lights_result(this),
+        _Internal::lights_result(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -761,12 +761,12 @@ failure:
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.light_result_);
+        *_impl_.lights_result_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -788,8 +788,8 @@ void SetMatrixResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   (void) cached_has_bits;
 
   if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_internal_mutable_light_result()->::mavsdk::rpc::lights::LightResult::MergeFrom(
-        from._internal_light_result());
+    _this->_internal_mutable_lights_result()->::mavsdk::rpc::lights::LightsResult::MergeFrom(
+        from._internal_lights_result());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -809,7 +809,7 @@ void SetMatrixResponse::InternalSwap(SetMatrixResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  swap(_impl_.light_result_, other->_impl_.light_result_);
+  swap(_impl_.lights_result_, other->_impl_.lights_result_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetMatrixResponse::GetMetadata() const {
@@ -1065,15 +1065,15 @@ class SetStripResponse::_Internal {
   using HasBits = decltype(std::declval<SetStripResponse>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
     8 * PROTOBUF_FIELD_OFFSET(SetStripResponse, _impl_._has_bits_);
-  static const ::mavsdk::rpc::lights::LightResult& light_result(const SetStripResponse* msg);
-  static void set_has_light_result(HasBits* has_bits) {
+  static const ::mavsdk::rpc::lights::LightsResult& lights_result(const SetStripResponse* msg);
+  static void set_has_lights_result(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-const ::mavsdk::rpc::lights::LightResult&
-SetStripResponse::_Internal::light_result(const SetStripResponse* msg) {
-  return *msg->_impl_.light_result_;
+const ::mavsdk::rpc::lights::LightsResult&
+SetStripResponse::_Internal::lights_result(const SetStripResponse* msg) {
+  return *msg->_impl_.lights_result_;
 }
 SetStripResponse::SetStripResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -1086,11 +1086,11 @@ SetStripResponse::SetStripResponse(const SetStripResponse& from)
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.light_result_){nullptr}};
+    , decltype(_impl_.lights_result_){nullptr}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.light_result_ = new ::mavsdk::rpc::lights::LightResult(*from._impl_.light_result_);
+    _this->_impl_.lights_result_ = new ::mavsdk::rpc::lights::LightsResult(*from._impl_.lights_result_);
   }
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.SetStripResponse)
 }
@@ -1100,7 +1100,7 @@ inline void SetStripResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.light_result_){nullptr}
+    , decltype(_impl_.lights_result_){nullptr}
   };
 }
 
@@ -1115,7 +1115,7 @@ SetStripResponse::~SetStripResponse() {
 
 inline void SetStripResponse::SharedDtor() {
   ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.light_result_;
+  if (this != internal_default_instance()) delete _impl_.lights_result_;
 }
 
 void SetStripResponse::SetCachedSize(int size) const {
@@ -1130,8 +1130,8 @@ void SetStripResponse::Clear() {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.light_result_ != nullptr);
-    _impl_.light_result_->Clear();
+    ABSL_DCHECK(_impl_.lights_result_ != nullptr);
+    _impl_.lights_result_->Clear();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1144,10 +1144,10 @@ const char* SetStripResponse::_InternalParse(const char* ptr, ::_pbi::ParseConte
     ::uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightResult light_result = 1;
+      // .mavsdk.rpc.lights.LightsResult lights_result = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_light_result(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_lights_result(), ptr);
           CHK_(ptr);
         } else {
           goto handle_unusual;
@@ -1184,11 +1184,11 @@ failure:
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::light_result(this),
-        _Internal::light_result(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(1, _Internal::lights_result(this),
+        _Internal::lights_result(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1207,12 +1207,12 @@ failure:
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.light_result_);
+        *_impl_.lights_result_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1234,8 +1234,8 @@ void SetStripResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   (void) cached_has_bits;
 
   if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_internal_mutable_light_result()->::mavsdk::rpc::lights::LightResult::MergeFrom(
-        from._internal_light_result());
+    _this->_internal_mutable_lights_result()->::mavsdk::rpc::lights::LightsResult::MergeFrom(
+        from._internal_lights_result());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1255,7 +1255,7 @@ void SetStripResponse::InternalSwap(SetStripResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  swap(_impl_.light_result_, other->_impl_.light_result_);
+  swap(_impl_.lights_result_, other->_impl_.lights_result_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetStripResponse::GetMetadata() const {
@@ -1443,15 +1443,15 @@ class FollowFlightModeResponse::_Internal {
   using HasBits = decltype(std::declval<FollowFlightModeResponse>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
     8 * PROTOBUF_FIELD_OFFSET(FollowFlightModeResponse, _impl_._has_bits_);
-  static const ::mavsdk::rpc::lights::LightResult& light_result(const FollowFlightModeResponse* msg);
-  static void set_has_light_result(HasBits* has_bits) {
+  static const ::mavsdk::rpc::lights::LightsResult& lights_result(const FollowFlightModeResponse* msg);
+  static void set_has_lights_result(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-const ::mavsdk::rpc::lights::LightResult&
-FollowFlightModeResponse::_Internal::light_result(const FollowFlightModeResponse* msg) {
-  return *msg->_impl_.light_result_;
+const ::mavsdk::rpc::lights::LightsResult&
+FollowFlightModeResponse::_Internal::lights_result(const FollowFlightModeResponse* msg) {
+  return *msg->_impl_.lights_result_;
 }
 FollowFlightModeResponse::FollowFlightModeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -1464,11 +1464,11 @@ FollowFlightModeResponse::FollowFlightModeResponse(const FollowFlightModeRespons
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.light_result_){nullptr}};
+    , decltype(_impl_.lights_result_){nullptr}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.light_result_ = new ::mavsdk::rpc::lights::LightResult(*from._impl_.light_result_);
+    _this->_impl_.lights_result_ = new ::mavsdk::rpc::lights::LightsResult(*from._impl_.lights_result_);
   }
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.FollowFlightModeResponse)
 }
@@ -1478,7 +1478,7 @@ inline void FollowFlightModeResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.light_result_){nullptr}
+    , decltype(_impl_.lights_result_){nullptr}
   };
 }
 
@@ -1493,7 +1493,7 @@ FollowFlightModeResponse::~FollowFlightModeResponse() {
 
 inline void FollowFlightModeResponse::SharedDtor() {
   ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.light_result_;
+  if (this != internal_default_instance()) delete _impl_.lights_result_;
 }
 
 void FollowFlightModeResponse::SetCachedSize(int size) const {
@@ -1508,8 +1508,8 @@ void FollowFlightModeResponse::Clear() {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.light_result_ != nullptr);
-    _impl_.light_result_->Clear();
+    ABSL_DCHECK(_impl_.lights_result_ != nullptr);
+    _impl_.lights_result_->Clear();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1522,10 +1522,10 @@ const char* FollowFlightModeResponse::_InternalParse(const char* ptr, ::_pbi::Pa
     ::uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightResult light_result = 1;
+      // .mavsdk.rpc.lights.LightsResult lights_result = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_light_result(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_lights_result(), ptr);
           CHK_(ptr);
         } else {
           goto handle_unusual;
@@ -1562,11 +1562,11 @@ failure:
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::light_result(this),
-        _Internal::light_result(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(1, _Internal::lights_result(this),
+        _Internal::lights_result(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1585,12 +1585,12 @@ failure:
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.light_result_);
+        *_impl_.lights_result_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1612,8 +1612,8 @@ void FollowFlightModeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_ms
   (void) cached_has_bits;
 
   if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_internal_mutable_light_result()->::mavsdk::rpc::lights::LightResult::MergeFrom(
-        from._internal_light_result());
+    _this->_internal_mutable_lights_result()->::mavsdk::rpc::lights::LightsResult::MergeFrom(
+        from._internal_lights_result());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1633,7 +1633,7 @@ void FollowFlightModeResponse::InternalSwap(FollowFlightModeResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  swap(_impl_.light_result_, other->_impl_.light_result_);
+  swap(_impl_.lights_result_, other->_impl_.lights_result_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FollowFlightModeResponse::GetMetadata() const {
@@ -1643,18 +1643,18 @@ void FollowFlightModeResponse::InternalSwap(FollowFlightModeResponse* other) {
 }
 // ===================================================================
 
-class LightResult::_Internal {
+class LightsResult::_Internal {
  public:
 };
 
-LightResult::LightResult(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+LightsResult::LightsResult(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightResult)
+  // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightsResult)
 }
-LightResult::LightResult(const LightResult& from)
+LightsResult::LightsResult(const LightsResult& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  LightResult* const _this = this; (void)_this;
+  LightsResult* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.result_str_) {}
 
@@ -1671,10 +1671,10 @@ LightResult::LightResult(const LightResult& from)
     _this->_impl_.result_str_.Set(from._internal_result_str(), _this->GetArenaForAllocation());
   }
   _this->_impl_.result_ = from._impl_.result_;
-  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightResult)
+  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightsResult)
 }
 
-inline void LightResult::SharedCtor(::_pb::Arena* arena) {
+inline void LightsResult::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
   new (&_impl_) Impl_{
       decltype(_impl_.result_str_) {}
@@ -1689,8 +1689,8 @@ inline void LightResult::SharedCtor(::_pb::Arena* arena) {
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-LightResult::~LightResult() {
-  // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightResult)
+LightsResult::~LightsResult() {
+  // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightsResult)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1698,17 +1698,17 @@ LightResult::~LightResult() {
   SharedDtor();
 }
 
-inline void LightResult::SharedDtor() {
+inline void LightsResult::SharedDtor() {
   ABSL_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.result_str_.Destroy();
 }
 
-void LightResult::SetCachedSize(int size) const {
+void LightsResult::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void LightResult::Clear() {
-// @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightResult)
+void LightsResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightsResult)
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1718,18 +1718,18 @@ void LightResult::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* LightResult::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* LightsResult::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightResult.Result result = 1;
+      // .mavsdk.rpc.lights.LightsResult.Result result = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
           ::int32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-          _internal_set_result(static_cast<::mavsdk::rpc::lights::LightResult_Result>(val));
+          _internal_set_result(static_cast<::mavsdk::rpc::lights::LightsResult_Result>(val));
         } else {
           goto handle_unusual;
         }
@@ -1740,7 +1740,7 @@ const char* LightResult::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_result_str();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mavsdk.rpc.lights.LightResult.result_str"));
+          CHK_(::_pbi::VerifyUTF8(str, "mavsdk.rpc.lights.LightsResult.result_str"));
         } else {
           goto handle_unusual;
         }
@@ -1768,13 +1768,13 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* LightResult::_InternalSerialize(
+::uint8_t* LightsResult::_InternalSerialize(
     ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightResult)
+  // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightsResult)
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.lights.LightResult.Result result = 1;
+  // .mavsdk.rpc.lights.LightsResult.Result result = 1;
   if (this->_internal_result() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -1785,7 +1785,7 @@ failure:
   if (!this->_internal_result_str().empty()) {
     const std::string& _s = this->_internal_result_str();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "mavsdk.rpc.lights.LightResult.result_str");
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "mavsdk.rpc.lights.LightsResult.result_str");
     target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
@@ -1793,12 +1793,12 @@ failure:
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightResult)
+  // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightsResult)
   return target;
 }
 
-::size_t LightResult::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mavsdk.rpc.lights.LightResult)
+::size_t LightsResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mavsdk.rpc.lights.LightsResult)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -1811,7 +1811,7 @@ failure:
                                     this->_internal_result_str());
   }
 
-  // .mavsdk.rpc.lights.LightResult.Result result = 1;
+  // .mavsdk.rpc.lights.LightsResult.Result result = 1;
   if (this->_internal_result() != 0) {
     total_size += 1 +
                   ::_pbi::WireFormatLite::EnumSize(this->_internal_result());
@@ -1820,17 +1820,17 @@ failure:
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightResult::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightsResult::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    LightResult::MergeImpl
+    LightsResult::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightResult::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightsResult::GetClassData() const { return &_class_data_; }
 
 
-void LightResult::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<LightResult*>(&to_msg);
-  auto& from = static_cast<const LightResult&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightResult)
+void LightsResult::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<LightsResult*>(&to_msg);
+  auto& from = static_cast<const LightsResult&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightsResult)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1844,18 +1844,18 @@ void LightResult::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void LightResult::CopyFrom(const LightResult& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mavsdk.rpc.lights.LightResult)
+void LightsResult::CopyFrom(const LightsResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mavsdk.rpc.lights.LightsResult)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool LightResult::IsInitialized() const {
+bool LightsResult::IsInitialized() const {
   return true;
 }
 
-void LightResult::InternalSwap(LightResult* other) {
+void LightsResult::InternalSwap(LightsResult* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -1865,7 +1865,7 @@ void LightResult::InternalSwap(LightResult* other) {
   swap(_impl_.result_, other->_impl_.result_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata LightResult::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata LightsResult::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[6]);
@@ -2273,9 +2273,9 @@ template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::FollowFlightModeResponse*
 Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::FollowFlightModeResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::FollowFlightModeResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightResult*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightResult >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightResult >(arena);
+template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightsResult*
+Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightsResult >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightsResult >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightStrip*
 Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightStrip >(Arena* arena) {

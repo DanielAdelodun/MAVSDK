@@ -64,12 +64,12 @@ extern FollowFlightModeResponseDefaultTypeInternal _FollowFlightModeResponse_def
 class LightMatrix;
 struct LightMatrixDefaultTypeInternal;
 extern LightMatrixDefaultTypeInternal _LightMatrix_default_instance_;
-class LightResult;
-struct LightResultDefaultTypeInternal;
-extern LightResultDefaultTypeInternal _LightResult_default_instance_;
 class LightStrip;
 struct LightStripDefaultTypeInternal;
 extern LightStripDefaultTypeInternal _LightStrip_default_instance_;
+class LightsResult;
+struct LightsResultDefaultTypeInternal;
+extern LightsResultDefaultTypeInternal _LightsResult_default_instance_;
 class SetMatrixRequest;
 struct SetMatrixRequestDefaultTypeInternal;
 extern SetMatrixRequestDefaultTypeInternal _SetMatrixRequest_default_instance_;
@@ -93,9 +93,9 @@ template <>
 template <>
 ::mavsdk::rpc::lights::LightMatrix* Arena::CreateMaybeMessage<::mavsdk::rpc::lights::LightMatrix>(Arena*);
 template <>
-::mavsdk::rpc::lights::LightResult* Arena::CreateMaybeMessage<::mavsdk::rpc::lights::LightResult>(Arena*);
-template <>
 ::mavsdk::rpc::lights::LightStrip* Arena::CreateMaybeMessage<::mavsdk::rpc::lights::LightStrip>(Arena*);
+template <>
+::mavsdk::rpc::lights::LightsResult* Arena::CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(Arena*);
 template <>
 ::mavsdk::rpc::lights::SetMatrixRequest* Arena::CreateMaybeMessage<::mavsdk::rpc::lights::SetMatrixRequest>(Arena*);
 template <>
@@ -109,43 +109,43 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace mavsdk {
 namespace rpc {
 namespace lights {
-enum LightResult_Result : int {
-  LightResult_Result_RESULT_UNKNOWN = 0,
-  LightResult_Result_RESULT_SUCCESS = 1,
-  LightResult_Result_RESULT_NO_SYSTEM = 2,
-  LightResult_Result_RESULT_CONNECTION_ERROR = 3,
-  LightResult_Result_RESULT_BUSY = 4,
-  LightResult_Result_RESULT_OUT_OF_BOUNDS = 5,
-  LightResult_Result_RESULT_TIMEOUT = 6,
-  LightResult_Result_RESULT_FAILED = 7,
-  LightResult_Result_LightResult_Result_INT_MIN_SENTINEL_DO_NOT_USE_ =
+enum LightsResult_Result : int {
+  LightsResult_Result_RESULT_UNKNOWN = 0,
+  LightsResult_Result_RESULT_SUCCESS = 1,
+  LightsResult_Result_RESULT_NO_SYSTEM = 2,
+  LightsResult_Result_RESULT_CONNECTION_ERROR = 3,
+  LightsResult_Result_RESULT_BUSY = 4,
+  LightsResult_Result_RESULT_OUT_OF_BOUNDS = 5,
+  LightsResult_Result_RESULT_TIMEOUT = 6,
+  LightsResult_Result_RESULT_FAILED = 7,
+  LightsResult_Result_LightsResult_Result_INT_MIN_SENTINEL_DO_NOT_USE_ =
       std::numeric_limits<::int32_t>::min(),
-  LightResult_Result_LightResult_Result_INT_MAX_SENTINEL_DO_NOT_USE_ =
+  LightsResult_Result_LightsResult_Result_INT_MAX_SENTINEL_DO_NOT_USE_ =
       std::numeric_limits<::int32_t>::max(),
 };
 
-bool LightResult_Result_IsValid(int value);
-constexpr LightResult_Result LightResult_Result_Result_MIN = static_cast<LightResult_Result>(0);
-constexpr LightResult_Result LightResult_Result_Result_MAX = static_cast<LightResult_Result>(7);
-constexpr int LightResult_Result_Result_ARRAYSIZE = 7 + 1;
+bool LightsResult_Result_IsValid(int value);
+constexpr LightsResult_Result LightsResult_Result_Result_MIN = static_cast<LightsResult_Result>(0);
+constexpr LightsResult_Result LightsResult_Result_Result_MAX = static_cast<LightsResult_Result>(7);
+constexpr int LightsResult_Result_Result_ARRAYSIZE = 7 + 1;
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-LightResult_Result_descriptor();
+LightsResult_Result_descriptor();
 template <typename T>
-const std::string& LightResult_Result_Name(T value) {
-  static_assert(std::is_same<T, LightResult_Result>::value ||
+const std::string& LightsResult_Result_Name(T value) {
+  static_assert(std::is_same<T, LightsResult_Result>::value ||
                     std::is_integral<T>::value,
                 "Incorrect type passed to Result_Name().");
-  return LightResult_Result_Name(static_cast<LightResult_Result>(value));
+  return LightsResult_Result_Name(static_cast<LightsResult_Result>(value));
 }
 template <>
-inline const std::string& LightResult_Result_Name(LightResult_Result value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfDenseEnum<LightResult_Result_descriptor,
+inline const std::string& LightsResult_Result_Name(LightsResult_Result value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfDenseEnum<LightsResult_Result_descriptor,
                                                  0, 7>(
       static_cast<int>(value));
 }
-inline bool LightResult_Result_Parse(absl::string_view name, LightResult_Result* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<LightResult_Result>(
-      LightResult_Result_descriptor(), name, value);
+inline bool LightsResult_Result_Parse(absl::string_view name, LightsResult_Result* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<LightsResult_Result>(
+      LightsResult_Result_descriptor(), name, value);
 }
 
 // ===================================================================
@@ -441,22 +441,22 @@ class SetMatrixResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLightResultFieldNumber = 1,
+    kLightsResultFieldNumber = 1,
   };
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
-  bool has_light_result() const;
-  void clear_light_result() ;
-  const ::mavsdk::rpc::lights::LightResult& light_result() const;
-  PROTOBUF_NODISCARD ::mavsdk::rpc::lights::LightResult* release_light_result();
-  ::mavsdk::rpc::lights::LightResult* mutable_light_result();
-  void set_allocated_light_result(::mavsdk::rpc::lights::LightResult* light_result);
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+  bool has_lights_result() const;
+  void clear_lights_result() ;
+  const ::mavsdk::rpc::lights::LightsResult& lights_result() const;
+  PROTOBUF_NODISCARD ::mavsdk::rpc::lights::LightsResult* release_lights_result();
+  ::mavsdk::rpc::lights::LightsResult* mutable_lights_result();
+  void set_allocated_lights_result(::mavsdk::rpc::lights::LightsResult* lights_result);
   private:
-  const ::mavsdk::rpc::lights::LightResult& _internal_light_result() const;
-  ::mavsdk::rpc::lights::LightResult* _internal_mutable_light_result();
+  const ::mavsdk::rpc::lights::LightsResult& _internal_lights_result() const;
+  ::mavsdk::rpc::lights::LightsResult* _internal_mutable_lights_result();
   public:
-  void unsafe_arena_set_allocated_light_result(
-      ::mavsdk::rpc::lights::LightResult* light_result);
-  ::mavsdk::rpc::lights::LightResult* unsafe_arena_release_light_result();
+  void unsafe_arena_set_allocated_lights_result(
+      ::mavsdk::rpc::lights::LightsResult* lights_result);
+  ::mavsdk::rpc::lights::LightsResult* unsafe_arena_release_lights_result();
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.SetMatrixResponse)
  private:
   class _Internal;
@@ -467,7 +467,7 @@ class SetMatrixResponse final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::mavsdk::rpc::lights::LightResult* light_result_;
+    ::mavsdk::rpc::lights::LightsResult* lights_result_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_lights_2flights_2eproto;
@@ -773,22 +773,22 @@ class SetStripResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLightResultFieldNumber = 1,
+    kLightsResultFieldNumber = 1,
   };
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
-  bool has_light_result() const;
-  void clear_light_result() ;
-  const ::mavsdk::rpc::lights::LightResult& light_result() const;
-  PROTOBUF_NODISCARD ::mavsdk::rpc::lights::LightResult* release_light_result();
-  ::mavsdk::rpc::lights::LightResult* mutable_light_result();
-  void set_allocated_light_result(::mavsdk::rpc::lights::LightResult* light_result);
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+  bool has_lights_result() const;
+  void clear_lights_result() ;
+  const ::mavsdk::rpc::lights::LightsResult& lights_result() const;
+  PROTOBUF_NODISCARD ::mavsdk::rpc::lights::LightsResult* release_lights_result();
+  ::mavsdk::rpc::lights::LightsResult* mutable_lights_result();
+  void set_allocated_lights_result(::mavsdk::rpc::lights::LightsResult* lights_result);
   private:
-  const ::mavsdk::rpc::lights::LightResult& _internal_light_result() const;
-  ::mavsdk::rpc::lights::LightResult* _internal_mutable_light_result();
+  const ::mavsdk::rpc::lights::LightsResult& _internal_lights_result() const;
+  ::mavsdk::rpc::lights::LightsResult* _internal_mutable_lights_result();
   public:
-  void unsafe_arena_set_allocated_light_result(
-      ::mavsdk::rpc::lights::LightResult* light_result);
-  ::mavsdk::rpc::lights::LightResult* unsafe_arena_release_light_result();
+  void unsafe_arena_set_allocated_lights_result(
+      ::mavsdk::rpc::lights::LightsResult* lights_result);
+  ::mavsdk::rpc::lights::LightsResult* unsafe_arena_release_lights_result();
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.SetStripResponse)
  private:
   class _Internal;
@@ -799,7 +799,7 @@ class SetStripResponse final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::mavsdk::rpc::lights::LightResult* light_result_;
+    ::mavsdk::rpc::lights::LightsResult* lights_result_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_lights_2flights_2eproto;
@@ -1088,22 +1088,22 @@ class FollowFlightModeResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLightResultFieldNumber = 1,
+    kLightsResultFieldNumber = 1,
   };
-  // .mavsdk.rpc.lights.LightResult light_result = 1;
-  bool has_light_result() const;
-  void clear_light_result() ;
-  const ::mavsdk::rpc::lights::LightResult& light_result() const;
-  PROTOBUF_NODISCARD ::mavsdk::rpc::lights::LightResult* release_light_result();
-  ::mavsdk::rpc::lights::LightResult* mutable_light_result();
-  void set_allocated_light_result(::mavsdk::rpc::lights::LightResult* light_result);
+  // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+  bool has_lights_result() const;
+  void clear_lights_result() ;
+  const ::mavsdk::rpc::lights::LightsResult& lights_result() const;
+  PROTOBUF_NODISCARD ::mavsdk::rpc::lights::LightsResult* release_lights_result();
+  ::mavsdk::rpc::lights::LightsResult* mutable_lights_result();
+  void set_allocated_lights_result(::mavsdk::rpc::lights::LightsResult* lights_result);
   private:
-  const ::mavsdk::rpc::lights::LightResult& _internal_light_result() const;
-  ::mavsdk::rpc::lights::LightResult* _internal_mutable_light_result();
+  const ::mavsdk::rpc::lights::LightsResult& _internal_lights_result() const;
+  ::mavsdk::rpc::lights::LightsResult* _internal_mutable_lights_result();
   public:
-  void unsafe_arena_set_allocated_light_result(
-      ::mavsdk::rpc::lights::LightResult* light_result);
-  ::mavsdk::rpc::lights::LightResult* unsafe_arena_release_light_result();
+  void unsafe_arena_set_allocated_lights_result(
+      ::mavsdk::rpc::lights::LightsResult* lights_result);
+  ::mavsdk::rpc::lights::LightsResult* unsafe_arena_release_lights_result();
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.FollowFlightModeResponse)
  private:
   class _Internal;
@@ -1114,31 +1114,31 @@ class FollowFlightModeResponse final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::mavsdk::rpc::lights::LightResult* light_result_;
+    ::mavsdk::rpc::lights::LightsResult* lights_result_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_lights_2flights_2eproto;
 };// -------------------------------------------------------------------
 
-class LightResult final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.lights.LightResult) */ {
+class LightsResult final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.lights.LightsResult) */ {
  public:
-  inline LightResult() : LightResult(nullptr) {}
-  ~LightResult() override;
+  inline LightsResult() : LightsResult(nullptr) {}
+  ~LightsResult() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR LightResult(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR LightsResult(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  LightResult(const LightResult& from);
-  LightResult(LightResult&& from) noexcept
-    : LightResult() {
+  LightsResult(const LightsResult& from);
+  LightsResult(LightsResult&& from) noexcept
+    : LightsResult() {
     *this = ::std::move(from);
   }
 
-  inline LightResult& operator=(const LightResult& from) {
+  inline LightsResult& operator=(const LightsResult& from) {
     CopyFrom(from);
     return *this;
   }
-  inline LightResult& operator=(LightResult&& from) noexcept {
+  inline LightsResult& operator=(LightsResult&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1168,20 +1168,20 @@ class LightResult final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const LightResult& default_instance() {
+  static const LightsResult& default_instance() {
     return *internal_default_instance();
   }
-  static inline const LightResult* internal_default_instance() {
-    return reinterpret_cast<const LightResult*>(
-               &_LightResult_default_instance_);
+  static inline const LightsResult* internal_default_instance() {
+    return reinterpret_cast<const LightsResult*>(
+               &_LightsResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(LightResult& a, LightResult& b) {
+  friend void swap(LightsResult& a, LightsResult& b) {
     a.Swap(&b);
   }
-  inline void Swap(LightResult* other) {
+  inline void Swap(LightsResult* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1194,7 +1194,7 @@ class LightResult final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(LightResult* other) {
+  void UnsafeArenaSwap(LightsResult* other) {
     if (other == this) return;
     ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1202,14 +1202,14 @@ class LightResult final :
 
   // implements Message ----------------------------------------------
 
-  LightResult* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<LightResult>(arena);
+  LightsResult* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<LightsResult>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const LightResult& from);
+  void CopyFrom(const LightsResult& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const LightResult& from) {
-    LightResult::MergeImpl(*this, from);
+  void MergeFrom( const LightsResult& from) {
+    LightsResult::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -1227,15 +1227,15 @@ class LightResult final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(LightResult* other);
+  void InternalSwap(LightsResult* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
-    return "mavsdk.rpc.lights.LightResult";
+    return "mavsdk.rpc.lights.LightsResult";
   }
   protected:
-  explicit LightResult(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit LightsResult(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -1245,30 +1245,30 @@ class LightResult final :
 
   // nested types ----------------------------------------------------
 
-  using Result = LightResult_Result;
-  static constexpr Result RESULT_UNKNOWN = LightResult_Result_RESULT_UNKNOWN;
-  static constexpr Result RESULT_SUCCESS = LightResult_Result_RESULT_SUCCESS;
-  static constexpr Result RESULT_NO_SYSTEM = LightResult_Result_RESULT_NO_SYSTEM;
-  static constexpr Result RESULT_CONNECTION_ERROR = LightResult_Result_RESULT_CONNECTION_ERROR;
-  static constexpr Result RESULT_BUSY = LightResult_Result_RESULT_BUSY;
-  static constexpr Result RESULT_OUT_OF_BOUNDS = LightResult_Result_RESULT_OUT_OF_BOUNDS;
-  static constexpr Result RESULT_TIMEOUT = LightResult_Result_RESULT_TIMEOUT;
-  static constexpr Result RESULT_FAILED = LightResult_Result_RESULT_FAILED;
+  using Result = LightsResult_Result;
+  static constexpr Result RESULT_UNKNOWN = LightsResult_Result_RESULT_UNKNOWN;
+  static constexpr Result RESULT_SUCCESS = LightsResult_Result_RESULT_SUCCESS;
+  static constexpr Result RESULT_NO_SYSTEM = LightsResult_Result_RESULT_NO_SYSTEM;
+  static constexpr Result RESULT_CONNECTION_ERROR = LightsResult_Result_RESULT_CONNECTION_ERROR;
+  static constexpr Result RESULT_BUSY = LightsResult_Result_RESULT_BUSY;
+  static constexpr Result RESULT_OUT_OF_BOUNDS = LightsResult_Result_RESULT_OUT_OF_BOUNDS;
+  static constexpr Result RESULT_TIMEOUT = LightsResult_Result_RESULT_TIMEOUT;
+  static constexpr Result RESULT_FAILED = LightsResult_Result_RESULT_FAILED;
   static inline bool Result_IsValid(int value) {
-    return LightResult_Result_IsValid(value);
+    return LightsResult_Result_IsValid(value);
   }
-  static constexpr Result Result_MIN = LightResult_Result_Result_MIN;
-  static constexpr Result Result_MAX = LightResult_Result_Result_MAX;
-  static constexpr int Result_ARRAYSIZE = LightResult_Result_Result_ARRAYSIZE;
+  static constexpr Result Result_MIN = LightsResult_Result_Result_MIN;
+  static constexpr Result Result_MAX = LightsResult_Result_Result_MAX;
+  static constexpr int Result_ARRAYSIZE = LightsResult_Result_Result_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Result_descriptor() {
-    return LightResult_Result_descriptor();
+    return LightsResult_Result_descriptor();
   }
   template <typename T>
   static inline const std::string& Result_Name(T value) {
-    return LightResult_Result_Name(value);
+    return LightsResult_Result_Name(value);
   }
   static inline bool Result_Parse(absl::string_view name, Result* value) {
-    return LightResult_Result_Parse(name, value);
+    return LightsResult_Result_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -1297,17 +1297,17 @@ class LightResult final :
   std::string* _internal_mutable_result_str();
 
   public:
-  // .mavsdk.rpc.lights.LightResult.Result result = 1;
+  // .mavsdk.rpc.lights.LightsResult.Result result = 1;
   void clear_result() ;
-  ::mavsdk::rpc::lights::LightResult_Result result() const;
-  void set_result(::mavsdk::rpc::lights::LightResult_Result value);
+  ::mavsdk::rpc::lights::LightsResult_Result result() const;
+  void set_result(::mavsdk::rpc::lights::LightsResult_Result value);
 
   private:
-  ::mavsdk::rpc::lights::LightResult_Result _internal_result() const;
-  void _internal_set_result(::mavsdk::rpc::lights::LightResult_Result value);
+  ::mavsdk::rpc::lights::LightsResult_Result _internal_result() const;
+  void _internal_set_result(::mavsdk::rpc::lights::LightsResult_Result value);
 
   public:
-  // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.LightResult)
+  // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.LightsResult)
  private:
   class _Internal;
 
@@ -1761,42 +1761,42 @@ inline void SetMatrixRequest::set_allocated_matrix_colors(::mavsdk::rpc::lights:
 
 // SetMatrixResponse
 
-// .mavsdk.rpc.lights.LightResult light_result = 1;
-inline bool SetMatrixResponse::has_light_result() const {
+// .mavsdk.rpc.lights.LightsResult lights_result = 1;
+inline bool SetMatrixResponse::has_lights_result() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.light_result_ != nullptr);
+  PROTOBUF_ASSUME(!value || _impl_.lights_result_ != nullptr);
   return value;
 }
-inline void SetMatrixResponse::clear_light_result() {
-  if (_impl_.light_result_ != nullptr) _impl_.light_result_->Clear();
+inline void SetMatrixResponse::clear_lights_result() {
+  if (_impl_.lights_result_ != nullptr) _impl_.lights_result_->Clear();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::mavsdk::rpc::lights::LightResult& SetMatrixResponse::_internal_light_result() const {
-  const ::mavsdk::rpc::lights::LightResult* p = _impl_.light_result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::mavsdk::rpc::lights::LightResult&>(
-      ::mavsdk::rpc::lights::_LightResult_default_instance_);
+inline const ::mavsdk::rpc::lights::LightsResult& SetMatrixResponse::_internal_lights_result() const {
+  const ::mavsdk::rpc::lights::LightsResult* p = _impl_.lights_result_;
+  return p != nullptr ? *p : reinterpret_cast<const ::mavsdk::rpc::lights::LightsResult&>(
+      ::mavsdk::rpc::lights::_LightsResult_default_instance_);
 }
-inline const ::mavsdk::rpc::lights::LightResult& SetMatrixResponse::light_result() const {
-  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.SetMatrixResponse.light_result)
-  return _internal_light_result();
+inline const ::mavsdk::rpc::lights::LightsResult& SetMatrixResponse::lights_result() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.SetMatrixResponse.lights_result)
+  return _internal_lights_result();
 }
-inline void SetMatrixResponse::unsafe_arena_set_allocated_light_result(
-    ::mavsdk::rpc::lights::LightResult* light_result) {
+inline void SetMatrixResponse::unsafe_arena_set_allocated_lights_result(
+    ::mavsdk::rpc::lights::LightsResult* lights_result) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.light_result_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.lights_result_);
   }
-  _impl_.light_result_ = light_result;
-  if (light_result) {
+  _impl_.lights_result_ = lights_result;
+  if (lights_result) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mavsdk.rpc.lights.SetMatrixResponse.light_result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mavsdk.rpc.lights.SetMatrixResponse.lights_result)
 }
-inline ::mavsdk::rpc::lights::LightResult* SetMatrixResponse::release_light_result() {
+inline ::mavsdk::rpc::lights::LightsResult* SetMatrixResponse::release_lights_result() {
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::mavsdk::rpc::lights::LightResult* temp = _impl_.light_result_;
-  _impl_.light_result_ = nullptr;
+  ::mavsdk::rpc::lights::LightsResult* temp = _impl_.lights_result_;
+  _impl_.lights_result_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1808,44 +1808,44 @@ inline ::mavsdk::rpc::lights::LightResult* SetMatrixResponse::release_light_resu
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::mavsdk::rpc::lights::LightResult* SetMatrixResponse::unsafe_arena_release_light_result() {
-  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.SetMatrixResponse.light_result)
+inline ::mavsdk::rpc::lights::LightsResult* SetMatrixResponse::unsafe_arena_release_lights_result() {
+  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.SetMatrixResponse.lights_result)
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::mavsdk::rpc::lights::LightResult* temp = _impl_.light_result_;
-  _impl_.light_result_ = nullptr;
+  ::mavsdk::rpc::lights::LightsResult* temp = _impl_.lights_result_;
+  _impl_.lights_result_ = nullptr;
   return temp;
 }
-inline ::mavsdk::rpc::lights::LightResult* SetMatrixResponse::_internal_mutable_light_result() {
+inline ::mavsdk::rpc::lights::LightsResult* SetMatrixResponse::_internal_mutable_lights_result() {
   _impl_._has_bits_[0] |= 0x00000001u;
-  if (_impl_.light_result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mavsdk::rpc::lights::LightResult>(GetArenaForAllocation());
-    _impl_.light_result_ = p;
+  if (_impl_.lights_result_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(GetArenaForAllocation());
+    _impl_.lights_result_ = p;
   }
-  return _impl_.light_result_;
+  return _impl_.lights_result_;
 }
-inline ::mavsdk::rpc::lights::LightResult* SetMatrixResponse::mutable_light_result() {
-  ::mavsdk::rpc::lights::LightResult* _msg = _internal_mutable_light_result();
-  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.SetMatrixResponse.light_result)
+inline ::mavsdk::rpc::lights::LightsResult* SetMatrixResponse::mutable_lights_result() {
+  ::mavsdk::rpc::lights::LightsResult* _msg = _internal_mutable_lights_result();
+  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.SetMatrixResponse.lights_result)
   return _msg;
 }
-inline void SetMatrixResponse::set_allocated_light_result(::mavsdk::rpc::lights::LightResult* light_result) {
+inline void SetMatrixResponse::set_allocated_lights_result(::mavsdk::rpc::lights::LightsResult* lights_result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete _impl_.light_result_;
+    delete _impl_.lights_result_;
   }
-  if (light_result) {
+  if (lights_result) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(light_result);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(lights_result);
     if (message_arena != submessage_arena) {
-      light_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, light_result, submessage_arena);
+      lights_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, lights_result, submessage_arena);
     }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  _impl_.light_result_ = light_result;
-  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.SetMatrixResponse.light_result)
+  _impl_.lights_result_ = lights_result;
+  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.SetMatrixResponse.lights_result)
 }
 
 // -------------------------------------------------------------------
@@ -1963,42 +1963,42 @@ inline void SetStripRequest::set_allocated_strip_colors(::mavsdk::rpc::lights::L
 
 // SetStripResponse
 
-// .mavsdk.rpc.lights.LightResult light_result = 1;
-inline bool SetStripResponse::has_light_result() const {
+// .mavsdk.rpc.lights.LightsResult lights_result = 1;
+inline bool SetStripResponse::has_lights_result() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.light_result_ != nullptr);
+  PROTOBUF_ASSUME(!value || _impl_.lights_result_ != nullptr);
   return value;
 }
-inline void SetStripResponse::clear_light_result() {
-  if (_impl_.light_result_ != nullptr) _impl_.light_result_->Clear();
+inline void SetStripResponse::clear_lights_result() {
+  if (_impl_.lights_result_ != nullptr) _impl_.lights_result_->Clear();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::mavsdk::rpc::lights::LightResult& SetStripResponse::_internal_light_result() const {
-  const ::mavsdk::rpc::lights::LightResult* p = _impl_.light_result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::mavsdk::rpc::lights::LightResult&>(
-      ::mavsdk::rpc::lights::_LightResult_default_instance_);
+inline const ::mavsdk::rpc::lights::LightsResult& SetStripResponse::_internal_lights_result() const {
+  const ::mavsdk::rpc::lights::LightsResult* p = _impl_.lights_result_;
+  return p != nullptr ? *p : reinterpret_cast<const ::mavsdk::rpc::lights::LightsResult&>(
+      ::mavsdk::rpc::lights::_LightsResult_default_instance_);
 }
-inline const ::mavsdk::rpc::lights::LightResult& SetStripResponse::light_result() const {
-  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.SetStripResponse.light_result)
-  return _internal_light_result();
+inline const ::mavsdk::rpc::lights::LightsResult& SetStripResponse::lights_result() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.SetStripResponse.lights_result)
+  return _internal_lights_result();
 }
-inline void SetStripResponse::unsafe_arena_set_allocated_light_result(
-    ::mavsdk::rpc::lights::LightResult* light_result) {
+inline void SetStripResponse::unsafe_arena_set_allocated_lights_result(
+    ::mavsdk::rpc::lights::LightsResult* lights_result) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.light_result_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.lights_result_);
   }
-  _impl_.light_result_ = light_result;
-  if (light_result) {
+  _impl_.lights_result_ = lights_result;
+  if (lights_result) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mavsdk.rpc.lights.SetStripResponse.light_result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mavsdk.rpc.lights.SetStripResponse.lights_result)
 }
-inline ::mavsdk::rpc::lights::LightResult* SetStripResponse::release_light_result() {
+inline ::mavsdk::rpc::lights::LightsResult* SetStripResponse::release_lights_result() {
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::mavsdk::rpc::lights::LightResult* temp = _impl_.light_result_;
-  _impl_.light_result_ = nullptr;
+  ::mavsdk::rpc::lights::LightsResult* temp = _impl_.lights_result_;
+  _impl_.lights_result_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2010,44 +2010,44 @@ inline ::mavsdk::rpc::lights::LightResult* SetStripResponse::release_light_resul
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::mavsdk::rpc::lights::LightResult* SetStripResponse::unsafe_arena_release_light_result() {
-  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.SetStripResponse.light_result)
+inline ::mavsdk::rpc::lights::LightsResult* SetStripResponse::unsafe_arena_release_lights_result() {
+  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.SetStripResponse.lights_result)
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::mavsdk::rpc::lights::LightResult* temp = _impl_.light_result_;
-  _impl_.light_result_ = nullptr;
+  ::mavsdk::rpc::lights::LightsResult* temp = _impl_.lights_result_;
+  _impl_.lights_result_ = nullptr;
   return temp;
 }
-inline ::mavsdk::rpc::lights::LightResult* SetStripResponse::_internal_mutable_light_result() {
+inline ::mavsdk::rpc::lights::LightsResult* SetStripResponse::_internal_mutable_lights_result() {
   _impl_._has_bits_[0] |= 0x00000001u;
-  if (_impl_.light_result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mavsdk::rpc::lights::LightResult>(GetArenaForAllocation());
-    _impl_.light_result_ = p;
+  if (_impl_.lights_result_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(GetArenaForAllocation());
+    _impl_.lights_result_ = p;
   }
-  return _impl_.light_result_;
+  return _impl_.lights_result_;
 }
-inline ::mavsdk::rpc::lights::LightResult* SetStripResponse::mutable_light_result() {
-  ::mavsdk::rpc::lights::LightResult* _msg = _internal_mutable_light_result();
-  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.SetStripResponse.light_result)
+inline ::mavsdk::rpc::lights::LightsResult* SetStripResponse::mutable_lights_result() {
+  ::mavsdk::rpc::lights::LightsResult* _msg = _internal_mutable_lights_result();
+  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.SetStripResponse.lights_result)
   return _msg;
 }
-inline void SetStripResponse::set_allocated_light_result(::mavsdk::rpc::lights::LightResult* light_result) {
+inline void SetStripResponse::set_allocated_lights_result(::mavsdk::rpc::lights::LightsResult* lights_result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete _impl_.light_result_;
+    delete _impl_.lights_result_;
   }
-  if (light_result) {
+  if (lights_result) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(light_result);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(lights_result);
     if (message_arena != submessage_arena) {
-      light_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, light_result, submessage_arena);
+      lights_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, lights_result, submessage_arena);
     }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  _impl_.light_result_ = light_result;
-  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.SetStripResponse.light_result)
+  _impl_.lights_result_ = lights_result;
+  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.SetStripResponse.lights_result)
 }
 
 // -------------------------------------------------------------------
@@ -2078,42 +2078,42 @@ inline void FollowFlightModeRequest::_internal_set_enable(bool value) {
 
 // FollowFlightModeResponse
 
-// .mavsdk.rpc.lights.LightResult light_result = 1;
-inline bool FollowFlightModeResponse::has_light_result() const {
+// .mavsdk.rpc.lights.LightsResult lights_result = 1;
+inline bool FollowFlightModeResponse::has_lights_result() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.light_result_ != nullptr);
+  PROTOBUF_ASSUME(!value || _impl_.lights_result_ != nullptr);
   return value;
 }
-inline void FollowFlightModeResponse::clear_light_result() {
-  if (_impl_.light_result_ != nullptr) _impl_.light_result_->Clear();
+inline void FollowFlightModeResponse::clear_lights_result() {
+  if (_impl_.lights_result_ != nullptr) _impl_.lights_result_->Clear();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::mavsdk::rpc::lights::LightResult& FollowFlightModeResponse::_internal_light_result() const {
-  const ::mavsdk::rpc::lights::LightResult* p = _impl_.light_result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::mavsdk::rpc::lights::LightResult&>(
-      ::mavsdk::rpc::lights::_LightResult_default_instance_);
+inline const ::mavsdk::rpc::lights::LightsResult& FollowFlightModeResponse::_internal_lights_result() const {
+  const ::mavsdk::rpc::lights::LightsResult* p = _impl_.lights_result_;
+  return p != nullptr ? *p : reinterpret_cast<const ::mavsdk::rpc::lights::LightsResult&>(
+      ::mavsdk::rpc::lights::_LightsResult_default_instance_);
 }
-inline const ::mavsdk::rpc::lights::LightResult& FollowFlightModeResponse::light_result() const {
-  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.FollowFlightModeResponse.light_result)
-  return _internal_light_result();
+inline const ::mavsdk::rpc::lights::LightsResult& FollowFlightModeResponse::lights_result() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.FollowFlightModeResponse.lights_result)
+  return _internal_lights_result();
 }
-inline void FollowFlightModeResponse::unsafe_arena_set_allocated_light_result(
-    ::mavsdk::rpc::lights::LightResult* light_result) {
+inline void FollowFlightModeResponse::unsafe_arena_set_allocated_lights_result(
+    ::mavsdk::rpc::lights::LightsResult* lights_result) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.light_result_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.lights_result_);
   }
-  _impl_.light_result_ = light_result;
-  if (light_result) {
+  _impl_.lights_result_ = lights_result;
+  if (lights_result) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mavsdk.rpc.lights.FollowFlightModeResponse.light_result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mavsdk.rpc.lights.FollowFlightModeResponse.lights_result)
 }
-inline ::mavsdk::rpc::lights::LightResult* FollowFlightModeResponse::release_light_result() {
+inline ::mavsdk::rpc::lights::LightsResult* FollowFlightModeResponse::release_lights_result() {
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::mavsdk::rpc::lights::LightResult* temp = _impl_.light_result_;
-  _impl_.light_result_ = nullptr;
+  ::mavsdk::rpc::lights::LightsResult* temp = _impl_.lights_result_;
+  _impl_.lights_result_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2125,115 +2125,115 @@ inline ::mavsdk::rpc::lights::LightResult* FollowFlightModeResponse::release_lig
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::mavsdk::rpc::lights::LightResult* FollowFlightModeResponse::unsafe_arena_release_light_result() {
-  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.FollowFlightModeResponse.light_result)
+inline ::mavsdk::rpc::lights::LightsResult* FollowFlightModeResponse::unsafe_arena_release_lights_result() {
+  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.FollowFlightModeResponse.lights_result)
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::mavsdk::rpc::lights::LightResult* temp = _impl_.light_result_;
-  _impl_.light_result_ = nullptr;
+  ::mavsdk::rpc::lights::LightsResult* temp = _impl_.lights_result_;
+  _impl_.lights_result_ = nullptr;
   return temp;
 }
-inline ::mavsdk::rpc::lights::LightResult* FollowFlightModeResponse::_internal_mutable_light_result() {
+inline ::mavsdk::rpc::lights::LightsResult* FollowFlightModeResponse::_internal_mutable_lights_result() {
   _impl_._has_bits_[0] |= 0x00000001u;
-  if (_impl_.light_result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mavsdk::rpc::lights::LightResult>(GetArenaForAllocation());
-    _impl_.light_result_ = p;
+  if (_impl_.lights_result_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(GetArenaForAllocation());
+    _impl_.lights_result_ = p;
   }
-  return _impl_.light_result_;
+  return _impl_.lights_result_;
 }
-inline ::mavsdk::rpc::lights::LightResult* FollowFlightModeResponse::mutable_light_result() {
-  ::mavsdk::rpc::lights::LightResult* _msg = _internal_mutable_light_result();
-  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.FollowFlightModeResponse.light_result)
+inline ::mavsdk::rpc::lights::LightsResult* FollowFlightModeResponse::mutable_lights_result() {
+  ::mavsdk::rpc::lights::LightsResult* _msg = _internal_mutable_lights_result();
+  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.FollowFlightModeResponse.lights_result)
   return _msg;
 }
-inline void FollowFlightModeResponse::set_allocated_light_result(::mavsdk::rpc::lights::LightResult* light_result) {
+inline void FollowFlightModeResponse::set_allocated_lights_result(::mavsdk::rpc::lights::LightsResult* lights_result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete _impl_.light_result_;
+    delete _impl_.lights_result_;
   }
-  if (light_result) {
+  if (lights_result) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(light_result);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(lights_result);
     if (message_arena != submessage_arena) {
-      light_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, light_result, submessage_arena);
+      lights_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, lights_result, submessage_arena);
     }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  _impl_.light_result_ = light_result;
-  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.FollowFlightModeResponse.light_result)
+  _impl_.lights_result_ = lights_result;
+  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.FollowFlightModeResponse.lights_result)
 }
 
 // -------------------------------------------------------------------
 
-// LightResult
+// LightsResult
 
-// .mavsdk.rpc.lights.LightResult.Result result = 1;
-inline void LightResult::clear_result() {
+// .mavsdk.rpc.lights.LightsResult.Result result = 1;
+inline void LightsResult::clear_result() {
   _impl_.result_ = 0;
 }
-inline ::mavsdk::rpc::lights::LightResult_Result LightResult::result() const {
-  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.LightResult.result)
+inline ::mavsdk::rpc::lights::LightsResult_Result LightsResult::result() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.LightsResult.result)
   return _internal_result();
 }
-inline void LightResult::set_result(::mavsdk::rpc::lights::LightResult_Result value) {
+inline void LightsResult::set_result(::mavsdk::rpc::lights::LightsResult_Result value) {
    _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:mavsdk.rpc.lights.LightResult.result)
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.lights.LightsResult.result)
 }
-inline ::mavsdk::rpc::lights::LightResult_Result LightResult::_internal_result() const {
-  return static_cast<::mavsdk::rpc::lights::LightResult_Result>(_impl_.result_);
+inline ::mavsdk::rpc::lights::LightsResult_Result LightsResult::_internal_result() const {
+  return static_cast<::mavsdk::rpc::lights::LightsResult_Result>(_impl_.result_);
 }
-inline void LightResult::_internal_set_result(::mavsdk::rpc::lights::LightResult_Result value) {
+inline void LightsResult::_internal_set_result(::mavsdk::rpc::lights::LightsResult_Result value) {
   ;
   _impl_.result_ = value;
 }
 
 // string result_str = 2;
-inline void LightResult::clear_result_str() {
+inline void LightsResult::clear_result_str() {
   _impl_.result_str_.ClearToEmpty();
 }
-inline const std::string& LightResult::result_str() const {
-  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.LightResult.result_str)
+inline const std::string& LightsResult::result_str() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.LightsResult.result_str)
   return _internal_result_str();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void LightResult::set_result_str(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void LightsResult::set_result_str(Arg_&& arg,
                                                      Args_... args) {
   ;
   _impl_.result_str_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:mavsdk.rpc.lights.LightResult.result_str)
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.lights.LightsResult.result_str)
 }
-inline std::string* LightResult::mutable_result_str() {
+inline std::string* LightsResult::mutable_result_str() {
   std::string* _s = _internal_mutable_result_str();
-  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.LightResult.result_str)
+  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.lights.LightsResult.result_str)
   return _s;
 }
-inline const std::string& LightResult::_internal_result_str() const {
+inline const std::string& LightsResult::_internal_result_str() const {
   return _impl_.result_str_.Get();
 }
-inline void LightResult::_internal_set_result_str(const std::string& value) {
+inline void LightsResult::_internal_set_result_str(const std::string& value) {
   ;
 
 
   _impl_.result_str_.Set(value, GetArenaForAllocation());
 }
-inline std::string* LightResult::_internal_mutable_result_str() {
+inline std::string* LightsResult::_internal_mutable_result_str() {
   ;
   return _impl_.result_str_.Mutable( GetArenaForAllocation());
 }
-inline std::string* LightResult::release_result_str() {
-  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.LightResult.result_str)
+inline std::string* LightsResult::release_result_str() {
+  // @@protoc_insertion_point(field_release:mavsdk.rpc.lights.LightsResult.result_str)
   return _impl_.result_str_.Release();
 }
-inline void LightResult::set_allocated_result_str(std::string* value) {
+inline void LightsResult::set_allocated_result_str(std::string* value) {
   _impl_.result_str_.SetAllocated(value, GetArenaForAllocation());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
         if (_impl_.result_str_.IsDefault()) {
           _impl_.result_str_.Set("", GetArenaForAllocation());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.LightResult.result_str)
+  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.lights.LightsResult.result_str)
 }
 
 // -------------------------------------------------------------------
@@ -2349,10 +2349,10 @@ LightMatrix::_internal_mutable_strips() {
 PROTOBUF_NAMESPACE_OPEN
 
 template <>
-struct is_proto_enum<::mavsdk::rpc::lights::LightResult_Result> : std::true_type {};
+struct is_proto_enum<::mavsdk::rpc::lights::LightsResult_Result> : std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor<::mavsdk::rpc::lights::LightResult_Result>() {
-  return ::mavsdk::rpc::lights::LightResult_Result_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor<::mavsdk::rpc::lights::LightsResult_Result>() {
+  return ::mavsdk::rpc::lights::LightsResult_Result_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

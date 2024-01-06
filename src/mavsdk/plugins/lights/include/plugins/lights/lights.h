@@ -13,22 +13,20 @@
 #include <utility>
 #include <vector>
 
-
 #include "plugin_base.h"
 
 #include "handle.h"
 
 namespace mavsdk {
 
-
-class System;class LightsImpl;
+class System;
+class LightsImpl;
 
 /**
- * @brief 
+ * @brief
  */
 class Lights : public PluginBase {
 public:
-
     /**
      * @brief Constructor. Creates the plugin for a specific System.
      *
@@ -55,16 +53,10 @@ public:
      */
     explicit Lights(std::shared_ptr<System> system); // new
 
-
     /**
      * @brief Destructor (internal use only).
      */
     ~Lights() override;
-
-
-
-
-
 
     /**
      * @brief Possible results returned for light requests
@@ -87,40 +79,10 @@ public:
      */
     friend std::ostream& operator<<(std::ostream& str, Lights::Result const& result);
 
-
-
-
-
     /**
-     * @brief 
-     */
-    struct LightMatrix {
-        
-        std::vector<LightStrip> strips{}; /**< @brief */
-    };
-
-    /**
-     * @brief Equal operator to compare two `Lights::LightMatrix` objects.
-     *
-     * @return `true` if items are equal.
-     */
-    friend bool operator==(const Lights::LightMatrix& lhs, const Lights::LightMatrix& rhs);
-
-    /**
-     * @brief Stream operator to print information about a `Lights::LightMatrix`.
-     *
-     * @return A reference to the stream.
-     */
-    friend std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_matrix);
-
-
-
-
-    /**
-     * @brief 
+     * @brief
      */
     struct LightStrip {
-        
         std::vector<uint32_t> lights{}; /**< @brief */
     };
 
@@ -138,16 +100,31 @@ public:
      */
     friend std::ostream& operator<<(std::ostream& str, Lights::LightStrip const& light_strip);
 
+    /**
+     * @brief
+     */
+    struct LightMatrix {
+        std::vector<LightStrip> strips{}; /**< @brief */
+    };
+
+    /**
+     * @brief Equal operator to compare two `Lights::LightMatrix` objects.
+     *
+     * @return `true` if items are equal.
+     */
+    friend bool operator==(const Lights::LightMatrix& lhs, const Lights::LightMatrix& rhs);
+
+    /**
+     * @brief Stream operator to print information about a `Lights::LightMatrix`.
+     *
+     * @return A reference to the stream.
+     */
+    friend std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_matrix);
 
     /**
      * @brief Callback type for asynchronous Lights calls.
      */
     using ResultCallback = std::function<void(Result)>;
-
-
-
-
-
 
     /**
      * @brief Set all lights to the given colors.
@@ -158,11 +135,6 @@ public:
      */
     Result set_matrix(LightMatrix matrix_colors) const;
 
-
-
-
-
-
     /**
      * @brief Set the lights on a given strip to the given colors.
      *
@@ -172,11 +144,6 @@ public:
      */
     Result set_strip(uint32_t strip_id, LightStrip strip_colors) const;
 
-
-
-
-
-
     /**
      * @brief Set whether the lights should follow the flight mode.
      *
@@ -185,9 +152,6 @@ public:
      * @return Result of request.
      */
     Result follow_flight_mode(bool enable) const;
-
-
-
 
     /**
      * @brief Copy constructor.

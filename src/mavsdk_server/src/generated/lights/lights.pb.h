@@ -1323,171 +1323,6 @@ class LightResult final :
   friend struct ::TableStruct_lights_2flights_2eproto;
 };// -------------------------------------------------------------------
 
-class LightMatrix final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.lights.LightMatrix) */ {
- public:
-  inline LightMatrix() : LightMatrix(nullptr) {}
-  ~LightMatrix() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR LightMatrix(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  LightMatrix(const LightMatrix& from);
-  LightMatrix(LightMatrix&& from) noexcept
-    : LightMatrix() {
-    *this = ::std::move(from);
-  }
-
-  inline LightMatrix& operator=(const LightMatrix& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline LightMatrix& operator=(LightMatrix&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const LightMatrix& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const LightMatrix* internal_default_instance() {
-    return reinterpret_cast<const LightMatrix*>(
-               &_LightMatrix_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  friend void swap(LightMatrix& a, LightMatrix& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(LightMatrix* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(LightMatrix* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  LightMatrix* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<LightMatrix>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const LightMatrix& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const LightMatrix& from) {
-    LightMatrix::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(LightMatrix* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "mavsdk.rpc.lights.LightMatrix";
-  }
-  protected:
-  explicit LightMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStripsFieldNumber = 1,
-  };
-  // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
-  int strips_size() const;
-  private:
-  int _internal_strips_size() const;
-
-  public:
-  void clear_strips() ;
-  ::mavsdk::rpc::lights::LightStrip* mutable_strips(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::lights::LightStrip >*
-      mutable_strips();
-  private:
-  const ::mavsdk::rpc::lights::LightStrip& _internal_strips(int index) const;
-  ::mavsdk::rpc::lights::LightStrip* _internal_add_strips();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::mavsdk::rpc::lights::LightStrip>& _internal_strips() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::mavsdk::rpc::lights::LightStrip>* _internal_mutable_strips();
-  public:
-  const ::mavsdk::rpc::lights::LightStrip& strips(int index) const;
-  ::mavsdk::rpc::lights::LightStrip* add_strips();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::lights::LightStrip >&
-      strips() const;
-  // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.LightMatrix)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::lights::LightStrip > strips_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_lights_2flights_2eproto;
-};// -------------------------------------------------------------------
-
 class LightStrip final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.lights.LightStrip) */ {
  public:
@@ -1544,7 +1379,7 @@ class LightStrip final :
                &_LightStrip_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(LightStrip& a, LightStrip& b) {
     a.Swap(&b);
@@ -1648,6 +1483,171 @@ class LightStrip final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t> lights_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _lights_cached_byte_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_lights_2flights_2eproto;
+};// -------------------------------------------------------------------
+
+class LightMatrix final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.lights.LightMatrix) */ {
+ public:
+  inline LightMatrix() : LightMatrix(nullptr) {}
+  ~LightMatrix() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR LightMatrix(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LightMatrix(const LightMatrix& from);
+  LightMatrix(LightMatrix&& from) noexcept
+    : LightMatrix() {
+    *this = ::std::move(from);
+  }
+
+  inline LightMatrix& operator=(const LightMatrix& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LightMatrix& operator=(LightMatrix&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LightMatrix& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LightMatrix* internal_default_instance() {
+    return reinterpret_cast<const LightMatrix*>(
+               &_LightMatrix_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(LightMatrix& a, LightMatrix& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LightMatrix* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LightMatrix* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  LightMatrix* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<LightMatrix>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LightMatrix& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const LightMatrix& from) {
+    LightMatrix::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LightMatrix* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "mavsdk.rpc.lights.LightMatrix";
+  }
+  protected:
+  explicit LightMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStripsFieldNumber = 1,
+  };
+  // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
+  int strips_size() const;
+  private:
+  int _internal_strips_size() const;
+
+  public:
+  void clear_strips() ;
+  ::mavsdk::rpc::lights::LightStrip* mutable_strips(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::lights::LightStrip >*
+      mutable_strips();
+  private:
+  const ::mavsdk::rpc::lights::LightStrip& _internal_strips(int index) const;
+  ::mavsdk::rpc::lights::LightStrip* _internal_add_strips();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::mavsdk::rpc::lights::LightStrip>& _internal_strips() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::mavsdk::rpc::lights::LightStrip>* _internal_mutable_strips();
+  public:
+  const ::mavsdk::rpc::lights::LightStrip& strips(int index) const;
+  ::mavsdk::rpc::lights::LightStrip* add_strips();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::lights::LightStrip >&
+      strips() const;
+  // @@protoc_insertion_point(class_scope:mavsdk.rpc.lights.LightMatrix)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::lights::LightStrip > strips_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2238,6 +2238,54 @@ inline void LightResult::set_allocated_result_str(std::string* value) {
 
 // -------------------------------------------------------------------
 
+// LightStrip
+
+// repeated uint32 lights = 1;
+inline int LightStrip::_internal_lights_size() const {
+  return _impl_.lights_.size();
+}
+inline int LightStrip::lights_size() const {
+  return _internal_lights_size();
+}
+inline void LightStrip::clear_lights() {
+  _internal_mutable_lights()->Clear();
+}
+inline ::uint32_t LightStrip::lights(int index) const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.LightStrip.lights)
+  return _internal_lights(index);
+}
+inline void LightStrip::set_lights(int index, ::uint32_t value) {
+  _internal_mutable_lights()->Set(index, value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.lights.LightStrip.lights)
+}
+inline void LightStrip::add_lights(::uint32_t value) {
+  _internal_add_lights(value);
+  // @@protoc_insertion_point(field_add:mavsdk.rpc.lights.LightStrip.lights)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>& LightStrip::lights() const {
+  // @@protoc_insertion_point(field_list:mavsdk.rpc.lights.LightStrip.lights)
+  return _internal_lights();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>* LightStrip::mutable_lights() {
+  // @@protoc_insertion_point(field_mutable_list:mavsdk.rpc.lights.LightStrip.lights)
+  return _internal_mutable_lights();
+}
+
+inline ::uint32_t LightStrip::_internal_lights(int index) const {
+  return _internal_lights().Get(index);
+}
+inline void LightStrip::_internal_add_lights(::uint32_t value) {
+  _internal_mutable_lights()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>& LightStrip::_internal_lights() const {
+  return _impl_.lights_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>* LightStrip::_internal_mutable_lights() {
+  return &_impl_.lights_;
+}
+
+// -------------------------------------------------------------------
+
 // LightMatrix
 
 // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
@@ -2286,54 +2334,6 @@ LightMatrix::_internal_strips() const {
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::mavsdk::rpc::lights::LightStrip>*
 LightMatrix::_internal_mutable_strips() {
   return &_impl_.strips_;
-}
-
-// -------------------------------------------------------------------
-
-// LightStrip
-
-// repeated uint32 lights = 1;
-inline int LightStrip::_internal_lights_size() const {
-  return _impl_.lights_.size();
-}
-inline int LightStrip::lights_size() const {
-  return _internal_lights_size();
-}
-inline void LightStrip::clear_lights() {
-  _internal_mutable_lights()->Clear();
-}
-inline ::uint32_t LightStrip::lights(int index) const {
-  // @@protoc_insertion_point(field_get:mavsdk.rpc.lights.LightStrip.lights)
-  return _internal_lights(index);
-}
-inline void LightStrip::set_lights(int index, ::uint32_t value) {
-  _internal_mutable_lights()->Set(index, value);
-  // @@protoc_insertion_point(field_set:mavsdk.rpc.lights.LightStrip.lights)
-}
-inline void LightStrip::add_lights(::uint32_t value) {
-  _internal_add_lights(value);
-  // @@protoc_insertion_point(field_add:mavsdk.rpc.lights.LightStrip.lights)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>& LightStrip::lights() const {
-  // @@protoc_insertion_point(field_list:mavsdk.rpc.lights.LightStrip.lights)
-  return _internal_lights();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>* LightStrip::mutable_lights() {
-  // @@protoc_insertion_point(field_mutable_list:mavsdk.rpc.lights.LightStrip.lights)
-  return _internal_mutable_lights();
-}
-
-inline ::uint32_t LightStrip::_internal_lights(int index) const {
-  return _internal_lights().Get(index);
-}
-inline void LightStrip::_internal_add_lights(::uint32_t value) {
-  _internal_mutable_lights()->Add(value);
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>& LightStrip::_internal_lights() const {
-  return _impl_.lights_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::uint32_t>* LightStrip::_internal_mutable_lights() {
-  return &_impl_.lights_;
 }
 
 #ifdef __GNUC__

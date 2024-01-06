@@ -140,21 +140,6 @@ struct LightResultDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightResultDefaultTypeInternal _LightResult_default_instance_;
 template <typename>
-PROTOBUF_CONSTEXPR LightMatrix::LightMatrix(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.strips_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct LightMatrixDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LightMatrixDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~LightMatrixDefaultTypeInternal() {}
-  union {
-    LightMatrix _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightMatrixDefaultTypeInternal _LightMatrix_default_instance_;
-template <typename>
 PROTOBUF_CONSTEXPR LightStrip::LightStrip(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.lights_)*/ {}
@@ -171,6 +156,21 @@ struct LightStripDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightStripDefaultTypeInternal _LightStrip_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR LightMatrix::LightMatrix(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.strips_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct LightMatrixDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR LightMatrixDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~LightMatrixDefaultTypeInternal() {}
+  union {
+    LightMatrix _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightMatrixDefaultTypeInternal _LightMatrix_default_instance_;
 }  // namespace lights
 }  // namespace rpc
 }  // namespace mavsdk
@@ -252,15 +252,6 @@ const ::uint32_t TableStruct_lights_2flights_2eproto::offsets[] PROTOBUF_SECTION
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightResult, _impl_.result_),
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightResult, _impl_.result_str_),
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightMatrix, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightMatrix, _impl_.strips_),
-    ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightStrip, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -269,6 +260,15 @@ const ::uint32_t TableStruct_lights_2flights_2eproto::offsets[] PROTOBUF_SECTION
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightStrip, _impl_.lights_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightMatrix, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::lights::LightMatrix, _impl_.strips_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -280,8 +280,8 @@ static const ::_pbi::MigrationSchema
         { 42, -1, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeRequest)},
         { 51, 60, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeResponse)},
         { 61, -1, -1, sizeof(::mavsdk::rpc::lights::LightResult)},
-        { 71, -1, -1, sizeof(::mavsdk::rpc::lights::LightMatrix)},
-        { 80, -1, -1, sizeof(::mavsdk::rpc::lights::LightStrip)},
+        { 71, -1, -1, sizeof(::mavsdk::rpc::lights::LightStrip)},
+        { 80, -1, -1, sizeof(::mavsdk::rpc::lights::LightMatrix)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -292,8 +292,8 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::mavsdk::rpc::lights::_FollowFlightModeRequest_default_instance_._instance,
     &::mavsdk::rpc::lights::_FollowFlightModeResponse_default_instance_._instance,
     &::mavsdk::rpc::lights::_LightResult_default_instance_._instance,
-    &::mavsdk::rpc::lights::_LightMatrix_default_instance_._instance,
     &::mavsdk::rpc::lights::_LightStrip_default_instance_._instance,
+    &::mavsdk::rpc::lights::_LightMatrix_default_instance_._instance,
 };
 const char descriptor_table_protodef_lights_2flights_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\023lights/lights.proto\022\021mavsdk.rpc.lights"
@@ -315,9 +315,9 @@ const char descriptor_table_protodef_lights_2flights_2eproto[] PROTOBUF_SECTION_
     "S\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONN"
     "ECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020\004\022\030\n\024RESUL"
     "T_OUT_OF_BOUNDS\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022\021\n"
-    "\rRESULT_FAILED\020\007\"<\n\013LightMatrix\022-\n\006strip"
-    "s\030\001 \003(\0132\035.mavsdk.rpc.lights.LightStrip\"\034"
-    "\n\nLightStrip\022\016\n\006lights\030\001 \003(\r2\273\002\n\rLightsS"
+    "\rRESULT_FAILED\020\007\"\034\n\nLightStrip\022\016\n\006lights"
+    "\030\001 \003(\r\"<\n\013LightMatrix\022-\n\006strips\030\001 \003(\0132\035."
+    "mavsdk.rpc.lights.LightStrip2\273\002\n\rLightsS"
     "ervice\022\\\n\tSetMatrix\022#.mavsdk.rpc.lights."
     "SetMatrixRequest\032$.mavsdk.rpc.lights.Set"
     "MatrixResponse\"\004\200\265\030\001\022Y\n\010SetStrip\022\".mavsd"
@@ -1872,188 +1872,6 @@ void LightResult::InternalSwap(LightResult* other) {
 }
 // ===================================================================
 
-class LightMatrix::_Internal {
- public:
-};
-
-LightMatrix::LightMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightMatrix)
-}
-LightMatrix::LightMatrix(const LightMatrix& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  LightMatrix* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.strips_){from._impl_.strips_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightMatrix)
-}
-
-inline void LightMatrix::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.strips_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-LightMatrix::~LightMatrix() {
-  // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightMatrix)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void LightMatrix::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  _internal_mutable_strips()->~RepeatedPtrField();
-}
-
-void LightMatrix::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void LightMatrix::Clear() {
-// @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightMatrix)
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_mutable_strips()->Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* LightMatrix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_strips(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-::uint8_t* LightMatrix::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightMatrix)
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_strips_size()); i < n; i++) {
-    const auto& repfield = this->_internal_strips(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightMatrix)
-  return target;
-}
-
-::size_t LightMatrix::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mavsdk.rpc.lights.LightMatrix)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
-  total_size += 1UL * this->_internal_strips_size();
-  for (const auto& msg : this->_internal_strips()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightMatrix::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    LightMatrix::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightMatrix::GetClassData() const { return &_class_data_; }
-
-
-void LightMatrix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<LightMatrix*>(&to_msg);
-  auto& from = static_cast<const LightMatrix&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightMatrix)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_internal_mutable_strips()->MergeFrom(from._internal_strips());
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void LightMatrix::CopyFrom(const LightMatrix& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mavsdk.rpc.lights.LightMatrix)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool LightMatrix::IsInitialized() const {
-  return true;
-}
-
-void LightMatrix::InternalSwap(LightMatrix* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _internal_mutable_strips()->InternalSwap(other->_internal_mutable_strips());
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata LightMatrix::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
-      file_level_metadata_lights_2flights_2eproto[7]);
-}
-// ===================================================================
-
 class LightStrip::_Internal {
  public:
 };
@@ -2242,6 +2060,188 @@ void LightStrip::InternalSwap(LightStrip* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LightStrip::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
+      file_level_metadata_lights_2flights_2eproto[7]);
+}
+// ===================================================================
+
+class LightMatrix::_Internal {
+ public:
+};
+
+LightMatrix::LightMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightMatrix)
+}
+LightMatrix::LightMatrix(const LightMatrix& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LightMatrix* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.strips_){from._impl_.strips_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightMatrix)
+}
+
+inline void LightMatrix::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.strips_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+LightMatrix::~LightMatrix() {
+  // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightMatrix)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void LightMatrix::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _internal_mutable_strips()->~RepeatedPtrField();
+}
+
+void LightMatrix::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void LightMatrix::Clear() {
+// @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightMatrix)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_mutable_strips()->Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LightMatrix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_strips(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* LightMatrix::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightMatrix)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_strips_size()); i < n; i++) {
+    const auto& repfield = this->_internal_strips(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightMatrix)
+  return target;
+}
+
+::size_t LightMatrix::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mavsdk.rpc.lights.LightMatrix)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
+  total_size += 1UL * this->_internal_strips_size();
+  for (const auto& msg : this->_internal_strips()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightMatrix::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    LightMatrix::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightMatrix::GetClassData() const { return &_class_data_; }
+
+
+void LightMatrix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<LightMatrix*>(&to_msg);
+  auto& from = static_cast<const LightMatrix&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightMatrix)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_strips()->MergeFrom(from._internal_strips());
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void LightMatrix::CopyFrom(const LightMatrix& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mavsdk.rpc.lights.LightMatrix)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LightMatrix::IsInitialized() const {
+  return true;
+}
+
+void LightMatrix::InternalSwap(LightMatrix* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_mutable_strips()->InternalSwap(other->_internal_mutable_strips());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LightMatrix::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[8]);
 }
 // @@protoc_insertion_point(namespace_scope)
@@ -2277,13 +2277,13 @@ template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightResult*
 Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightResult >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightResult >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightMatrix*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightMatrix >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightMatrix >(arena);
-}
 template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightStrip*
 Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightStrip >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightStrip >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightMatrix*
+Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightMatrix >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightMatrix >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 // @@protoc_insertion_point(global_scope)

@@ -4,9 +4,7 @@
 
 #include "plugin_impl_base.h"
 
-
 namespace mavsdk {
-
 
 class LightsImpl : public PluginImplBase {
 public:
@@ -18,30 +16,14 @@ public:
     void init() override;
     void deinit() override;
 
-
     void enable() override;
     void disable() override;
 
-
-
-
-
-
     Lights::Result set_matrix(Lights::LightMatrix matrix_colors);
-
-
-
-
 
     Lights::Result set_strip(uint32_t strip_id, Lights::LightStrip strip_colors);
 
-
-
-
-
     Lights::Result follow_flight_mode(bool enable);
-
-
 
 private:
 };

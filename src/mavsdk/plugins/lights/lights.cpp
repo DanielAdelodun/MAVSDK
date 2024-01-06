@@ -9,48 +9,32 @@
 
 namespace mavsdk {
 
-
-using LightMatrix = Lights::LightMatrix;
 using LightStrip = Lights::LightStrip;
-
-
+using LightMatrix = Lights::LightMatrix;
 
 Lights::Lights(System& system) : PluginBase(), _impl{std::make_unique<LightsImpl>(system)} {}
 
-Lights::Lights(std::shared_ptr<System> system) : PluginBase(), _impl{std::make_unique<LightsImpl>(system)} {}
-
+Lights::Lights(std::shared_ptr<System> system) :
+    PluginBase(),
+    _impl{std::make_unique<LightsImpl>(system)}
+{}
 
 Lights::~Lights() {}
-
-
-
-
 
 Lights::Result Lights::set_matrix(LightMatrix matrix_colors) const
 {
     return _impl->set_matrix(matrix_colors);
 }
 
-
-
-
-
 Lights::Result Lights::set_strip(uint32_t strip_id, LightStrip strip_colors) const
 {
     return _impl->set_strip(strip_id, strip_colors);
 }
 
-
-
-
-
 Lights::Result Lights::follow_flight_mode(bool enable) const
 {
     return _impl->follow_flight_mode(enable);
 }
-
-
-
 
 std::ostream& operator<<(std::ostream& str, Lights::Result const& result)
 {
@@ -76,39 +60,15 @@ std::ostream& operator<<(std::ostream& str, Lights::Result const& result)
     }
 }
 
-
-bool operator==(const Lights::LightMatrix& lhs, const Lights::LightMatrix& rhs)
-{
-    return
-        (rhs.strips == lhs.strips);
-}
-
-std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_matrix)
-{
-    str << std::setprecision(15);
-    str << "light_matrix:" << '\n'
-        << "{\n";
-    str << "    strips: [";
-    for (auto it = light_matrix.strips.begin(); it != light_matrix.strips.end(); ++it) {
-        str << *it;
-        str << (it + 1 != light_matrix.strips.end() ? ", " : "]\n");
-    }
-    str << '}';
-    return str;
-}
-
-
 bool operator==(const Lights::LightStrip& lhs, const Lights::LightStrip& rhs)
 {
-    return
-        (rhs.lights == lhs.lights);
+    return (rhs.lights == lhs.lights);
 }
 
 std::ostream& operator<<(std::ostream& str, Lights::LightStrip const& light_strip)
 {
     str << std::setprecision(15);
-    str << "light_strip:" << '\n'
-        << "{\n";
+    str << "light_strip:" << '\n' << "{\n";
     str << "    lights: [";
     for (auto it = light_strip.lights.begin(); it != light_strip.lights.end(); ++it) {
         str << *it;
@@ -118,7 +78,22 @@ std::ostream& operator<<(std::ostream& str, Lights::LightStrip const& light_stri
     return str;
 }
 
+bool operator==(const Lights::LightMatrix& lhs, const Lights::LightMatrix& rhs)
+{
+    return (rhs.strips == lhs.strips);
+}
 
-
+std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_matrix)
+{
+    str << std::setprecision(15);
+    str << "light_matrix:" << '\n' << "{\n";
+    str << "    strips: [";
+    for (auto it = light_matrix.strips.begin(); it != light_matrix.strips.end(); ++it) {
+        str << *it;
+        str << (it + 1 != light_matrix.strips.end() ? ", " : "]\n");
+    }
+    str << '}';
+    return str;
+}
 
 } // namespace mavsdk

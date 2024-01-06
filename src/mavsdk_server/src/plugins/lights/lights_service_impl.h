@@ -21,15 +21,11 @@
 namespace mavsdk {
 namespace mavsdk_server {
 
-
 template<typename Lights = Lights, typename LazyPlugin = LazyPlugin<Lights>>
 
 class LightsServiceImpl final : public rpc::lights::LightsService::Service {
 public:
-
     LightsServiceImpl(LazyPlugin& lazy_plugin) : _lazy_plugin(lazy_plugin) {}
-
-
 
     template<typename ResponseType>
     void fillResponseWithResult(ResponseType* response, mavsdk::Lights::Result& result) const
@@ -45,9 +41,8 @@ public:
         response->set_allocated_lights_result(rpc_lights_result);
     }
 
-
-
-    static rpc::lights::LightResult::Result translateToRpcResult(const mavsdk::Lights::Result& result)
+    static rpc::lights::LightResult::Result
+    translateToRpcResult(const mavsdk::Lights::Result& result)
     {
         switch (result) {
             default:
@@ -72,7 +67,8 @@ public:
         }
     }
 
-    static mavsdk::Lights::Result translateFromRpcResult(const rpc::lights::LightResult::Result result)
+    static mavsdk::Lights::Result
+    translateFromRpcResult(const rpc::lights::LightResult::Result result)
     {
         switch (result) {
             default:
@@ -97,77 +93,55 @@ public:
         }
     }
 
+    static std::unique_ptr<rpc::lights::LightStrip>
+    translateToRpcLightStrip(const mavsdk::Lights::LightStrip& light_strip)
+    {
+        auto rpc_obj = std::make_unique<rpc::lights::LightStrip>();
 
+        for (const auto& elem : light_strip.lights) {
+            rpc_obj->add_lights(elem);
+        }
 
+        return rpc_obj;
+    }
 
+    static mavsdk::Lights::LightStrip
+    translateFromRpcLightStrip(const rpc::lights::LightStrip& light_strip)
+    {
+        mavsdk::Lights::LightStrip obj;
 
+        for (const auto& elem : light_strip.lights()) {
+            obj.lights.push_back(elem);
+        }
 
-    static std::unique_ptr<rpc::lights::LightMatrix> translateToRpcLightMatrix(const mavsdk::Lights::LightMatrix &light_matrix)
+        return obj;
+    }
+
+    static std::unique_ptr<rpc::lights::LightMatrix>
+    translateToRpcLightMatrix(const mavsdk::Lights::LightMatrix& light_matrix)
     {
         auto rpc_obj = std::make_unique<rpc::lights::LightMatrix>();
 
-
-            
-                
         for (const auto& elem : light_matrix.strips) {
             auto* ptr = rpc_obj->add_strips();
             ptr->CopyFrom(*translateToRpcLightStrip(elem).release());
         }
-                
-            
-        
 
         return rpc_obj;
     }
 
-    static mavsdk::Lights::LightMatrix translateFromRpcLightMatrix(const rpc::lights::LightMatrix& light_matrix)
+    static mavsdk::Lights::LightMatrix
+    translateFromRpcLightMatrix(const rpc::lights::LightMatrix& light_matrix)
     {
         mavsdk::Lights::LightMatrix obj;
 
-
-            
-                for (const auto& elem : light_matrix.strips()) {
-                    obj.strips.push_back(translateFromRpcLightStrip(static_cast<mavsdk::rpc::lights::LightStrip>(elem)));
-                }
-            
-        
-        return obj;
-    }
-
-
-
-
-
-    static std::unique_ptr<rpc::lights::LightStrip> translateToRpcLightStrip(const mavsdk::Lights::LightStrip &light_strip)
-    {
-        auto rpc_obj = std::make_unique<rpc::lights::LightStrip>();
-
-
-            
-        for (const auto& elem : light_strip.lights) {
-            rpc_obj->add_lights(elem);
+        for (const auto& elem : light_matrix.strips()) {
+            obj.strips.push_back(
+                translateFromRpcLightStrip(static_cast<mavsdk::rpc::lights::LightStrip>(elem)));
         }
-            
-        
 
-        return rpc_obj;
-    }
-
-    static mavsdk::Lights::LightStrip translateFromRpcLightStrip(const rpc::lights::LightStrip& light_strip)
-    {
-        mavsdk::Lights::LightStrip obj;
-
-
-            
-                for (const auto& elem : light_strip.lights()) {
-                    obj.lights.push_back(elem);
-                }
-            
-        
         return obj;
     }
-
-
 
     grpc::Status SetMatrix(
         grpc::ServerContext* /* context */,
@@ -175,12 +149,11 @@ public:
         rpc::lights::SetMatrixResponse* response) override
     {
         if (_lazy_plugin.maybe_plugin() == nullptr) {
-            
             if (response != nullptr) {
                 auto result = mavsdk::Lights::Result::NoSystem;
                 fillResponseWithResult(response, result);
             }
-            
+
             return grpc::Status::OK;
         }
 
@@ -188,16 +161,13 @@ public:
             LogWarn() << "SetMatrix sent with a null request! Ignoring...";
             return grpc::Status::OK;
         }
-            
-        
-        auto result = _lazy_plugin.maybe_plugin()->set_matrix(translateFromRpcLightMatrix(request->matrix_colors()));
-        
 
-        
+        auto result = _lazy_plugin.maybe_plugin()->set_matrix(
+            translateFromRpcLightMatrix(request->matrix_colors()));
+
         if (response != nullptr) {
             fillResponseWithResult(response, result);
         }
-        
 
         return grpc::Status::OK;
     }
@@ -208,12 +178,11 @@ public:
         rpc::lights::SetStripResponse* response) override
     {
         if (_lazy_plugin.maybe_plugin() == nullptr) {
-            
             if (response != nullptr) {
                 auto result = mavsdk::Lights::Result::NoSystem;
                 fillResponseWithResult(response, result);
             }
-            
+
             return grpc::Status::OK;
         }
 
@@ -221,18 +190,13 @@ public:
             LogWarn() << "SetStrip sent with a null request! Ignoring...";
             return grpc::Status::OK;
         }
-            
-        
-            
-        
-        auto result = _lazy_plugin.maybe_plugin()->set_strip(request->strip_id(), translateFromRpcLightStrip(request->strip_colors()));
-        
 
-        
+        auto result = _lazy_plugin.maybe_plugin()->set_strip(
+            request->strip_id(), translateFromRpcLightStrip(request->strip_colors()));
+
         if (response != nullptr) {
             fillResponseWithResult(response, result);
         }
-        
 
         return grpc::Status::OK;
     }
@@ -243,12 +207,11 @@ public:
         rpc::lights::FollowFlightModeResponse* response) override
     {
         if (_lazy_plugin.maybe_plugin() == nullptr) {
-            
             if (response != nullptr) {
                 auto result = mavsdk::Lights::Result::NoSystem;
                 fillResponseWithResult(response, result);
             }
-            
+
             return grpc::Status::OK;
         }
 
@@ -256,22 +219,18 @@ public:
             LogWarn() << "FollowFlightMode sent with a null request! Ignoring...";
             return grpc::Status::OK;
         }
-            
-        
-        auto result = _lazy_plugin.maybe_plugin()->follow_flight_mode(request->enable());
-        
 
-        
+        auto result = _lazy_plugin.maybe_plugin()->follow_flight_mode(request->enable());
+
         if (response != nullptr) {
             fillResponseWithResult(response, result);
         }
-        
 
         return grpc::Status::OK;
     }
 
-
-    void stop() {
+    void stop()
+    {
         _stopped.store(true);
         for (auto& prom : _stream_stop_promises) {
             if (auto handle = prom.lock()) {
@@ -281,7 +240,8 @@ public:
     }
 
 private:
-    void register_stream_stop_promise(std::weak_ptr<std::promise<void>> prom) {
+    void register_stream_stop_promise(std::weak_ptr<std::promise<void>> prom)
+    {
         // If we have already stopped, set promise immediately and don't add it to list.
         if (_stopped.load()) {
             if (auto handle = prom.lock()) {
@@ -292,8 +252,10 @@ private:
         }
     }
 
-    void unregister_stream_stop_promise(std::shared_ptr<std::promise<void>> prom) {
-        for (auto it = _stream_stop_promises.begin(); it != _stream_stop_promises.end(); /* ++it */) {
+    void unregister_stream_stop_promise(std::shared_ptr<std::promise<void>> prom)
+    {
+        for (auto it = _stream_stop_promises.begin(); it != _stream_stop_promises.end();
+             /* ++it */) {
             if (it->lock() == prom) {
                 it = _stream_stop_promises.erase(it);
             } else {
@@ -302,11 +264,10 @@ private:
         }
     }
 
-
     LazyPlugin& _lazy_plugin;
 
     std::atomic<bool> _stopped{false};
-    std::vector<std::weak_ptr<std::promise<void>>> _stream_stop_promises {};
+    std::vector<std::weak_ptr<std::promise<void>>> _stream_stop_promises{};
 };
 
 } // namespace mavsdk_server

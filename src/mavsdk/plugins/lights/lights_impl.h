@@ -19,9 +19,8 @@ public:
     void enable() override;
     void disable() override;
 
-    Lights::Result set_matrix(Lights::LightMatrix matrix_colors);
-
-    Lights::Result set_strip(uint32_t strip_id, Lights::LightStrip strip_colors);
+    Lights::Result set_strip(uint32_t strip_id, const Lights::LightStrip &strip) const;
+    Lights::Result set_matrix(const Lights::LightMatrix &matrix) const;
 
     Lights::Result follow_flight_mode(bool enable);
 

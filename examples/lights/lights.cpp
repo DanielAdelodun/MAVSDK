@@ -51,33 +51,36 @@ int main(int argc, char** argv) {
     std::vector<Lights::LightStrip> strips;
 
     for (int i = 0; i < num_strips; i++) {
-        strips.push_back(Lights::LightStrip{.lights = {0, 0, 0, 0, 0, 0, 0, 0}});
+        strips.push_back( 
+            Lights::LightStrip {
+                .lights = {
+                    0, 0, 0, 0, 0, 0, 0, 0,
+                }
+            });
     }
 
-    Lights::LightMatrix matrix { .strips = strips };
+    Lights::LightMatrix matrix { .strips = std::move(strips) };
 
     while (true) {
-        for ( auto& strip : matrix.strips ) {
+        for ( uint8_t i = 0; i < num_strips; i++ ) {
 
             auto colorPair = random_color(colorMap);
             auto colorName = colorPair.first;
             auto color = colorPair.second;
 
             std::vector<uint32_t> colors(pixels_per_strip, color);
-            strip.lights = std::move(colors);
+            matrix.strips[i].lights = std::move(colors);
 
-            std::cout << "Setting strip to " << colorName << '\n';
+            printf("Strip %02d: %s\n", i, colorName.c_str());
         }
 
-        std::cout << std::endl;
+        printf("\n");
 
         lights.set_matrix(matrix);
-
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::this_thread::sleep_for(std::chrono::seconds(5));
 
         lights.follow_flight_mode(true);
-
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::this_thread::sleep_for(std::chrono::seconds(5));
     }
 
     return 0;

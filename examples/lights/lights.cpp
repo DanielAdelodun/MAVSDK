@@ -15,7 +15,7 @@ std::map<std::string, uint32_t> read_color_map();
 std::shared_ptr<System> get_system(const std::string& connection_url, Mavsdk& mavsdk);
 std::pair<std::string, uint32_t> random_color( std::map<std::string, uint32_t> colorMap );
 
-static constexpr uint8_t pixels_per_strip = 8;
+static constexpr uint8_t pixels_per_strip = 20;
 static uint8_t num_strips = 4;
 
 void usage(const std::string& bin_name) {
@@ -110,7 +110,7 @@ std::map<std::string, uint32_t> read_color_map() {
 }
 
 std::shared_ptr<System> get_system(const std::string& connection_url, Mavsdk& mavsdk) {
-    mavsdk.set_configuration(Mavsdk::Configuration{1, 135, 1});
+    mavsdk.set_configuration(Mavsdk::Configuration{1, 135, 1}); // 135 = Lights user component ID
     ConnectionResult connection_result = mavsdk.add_any_connection(connection_url);
 
     if (connection_result != ConnectionResult::Success) {

@@ -26,20 +26,18 @@ void LightsImpl::enable() {}
 void LightsImpl::disable() {}
 
 Lights::Result LightsImpl::set_strip(uint32_t strip_id, const Lights::LightStrip &strip) const {
-
-    uint32_t c[8]{0, 0, 0, 0, 0, 0, 0, 0};
-
     int num_leds = strip.lights.size();
     int num_groups = num_leds / 8;
     int remainder = num_leds % 8;
 
     for (int i = 0; i < num_groups; i++) {
+        std::array<uint32_t, 8> c{0, 0, 0, 0, 0, 0, 0, 0};
         for (int j = 0; j < 8; j++) {
             c[j] = strip.lights[i*8 + j];
         }
 
         auto result =
-            _system_impl->queue_message([&](MavlinkAddress mavlink_address, uint8_t channel) {
+            _system_impl->queue_message([c, this, i, strip_id](MavlinkAddress mavlink_address, uint8_t channel) {
                 mavlink_message_t message;
                 mavlink_msg_led_strip_config_pack_chan(
                     mavlink_address.system_id,
@@ -52,7 +50,7 @@ Lights::Result LightsImpl::set_strip(uint32_t strip_id, const Lights::LightStrip
                     i*8,
                     8,
                     strip_id,
-                    c);
+                    c.data());
                 return message;
             }) ?
                 Lights::Result::Success :
@@ -64,12 +62,13 @@ Lights::Result LightsImpl::set_strip(uint32_t strip_id, const Lights::LightStrip
     }
 
     if (remainder > 0) {
+        std::array<uint32_t, 8> c{};
         for (int j = 0; j < remainder; j++) {
             c[j] = strip.lights[num_groups*8 + j];
         }
 
         auto result =
-            _system_impl->queue_message([&](MavlinkAddress mavlink_address, uint8_t channel) {
+            _system_impl->queue_message([c, this, num_groups, remainder, strip_id](MavlinkAddress mavlink_address, uint8_t channel) {
                 mavlink_message_t message;
                 mavlink_msg_led_strip_config_pack_chan(
                     mavlink_address.system_id,
@@ -82,7 +81,7 @@ Lights::Result LightsImpl::set_strip(uint32_t strip_id, const Lights::LightStrip
                     num_groups*8,
                     remainder,
                     strip_id,
-                    c);
+                    c.data());
                 return message;
             }) ?
                 Lights::Result::Success :

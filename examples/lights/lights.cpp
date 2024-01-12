@@ -8,12 +8,12 @@
 #include <thread>
 #include <map>
 
+#include "colormap.hpp"
+
 using namespace mavsdk;
 using std::chrono::seconds;
 
-std::map<std::string, uint32_t> read_color_map();
 std::shared_ptr<System> get_system(const std::string& connection_url, Mavsdk& mavsdk);
-std::pair<std::string, uint32_t> random_color( std::map<std::string, uint32_t> colorMap );
 
 static constexpr uint8_t pixels_per_strip = 20;
 static uint8_t num_strips = 4;
@@ -38,30 +38,28 @@ int main(int argc, char** argv) {
     }
 
     Mavsdk mavsdk{Mavsdk::Configuration{Mavsdk::ComponentType::GroundStation}};
-    auto system = get_system(argv[1], mavsdk);
 
-    if (!system) {
+    mavsdk.set_configuration(Mavsdk::Configuration{1, 135, 1}); // 135 = Lights user component ID
+    ConnectionResult connection_result = mavsdk.add_any_connection(argv[1]);
+
+    if (connection_result != ConnectionResult::Success) {
+        std::cerr << "Connection failed: " << connection_result << '\n';
         return 1;
     }
 
-    auto lights = Lights{system};
-
-    auto colorMap = read_color_map();
-
-    std::vector<Lights::LightStrip> strips;
-
-    for (int i = 0; i < num_strips; i++) {
-        strips.push_back( 
-            Lights::LightStrip {
-                .lights = {
-                    0, 0, 0, 0, 0, 0, 0, 0,
-                }
-            });
+    auto system = mavsdk.first_autopilot(3.0);
+    if (!system) {
+        std::cerr << "Timed out waiting for system\n";
+        return 1;
     }
 
-    Lights::LightMatrix matrix { .strips = std::move(strips) };
+    auto lights = Lights{system.value()};
+
+    auto colorMap = read_colormap();
 
     while (true) {
+        Lights::LightMatrix matrix;
+        
         for ( uint8_t i = 0; i < num_strips; i++ ) {
 
             auto colorPair = random_color(colorMap);
@@ -69,7 +67,10 @@ int main(int argc, char** argv) {
             auto color = colorPair.second;
 
             std::vector<uint32_t> colors(pixels_per_strip, color);
-            matrix.strips[i].lights = std::move(colors);
+            matrix.strips.push_back( 
+                Lights::LightStrip {
+                    .lights = std::move(colors)
+                });
 
             printf("Strip %02d: %s\n", i, colorName.c_str());
         }
@@ -86,49 +87,4 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-std::map<std::string, uint32_t> read_color_map() {
-    std::ifstream cmFile("colormap.txt");
-    std::map<std::string, uint32_t> colorMap;
 
-    uint32_t color;
-    std::string name;
-    std::string cmLine;
-
-    while (cmFile.good()) {
-        std::getline(cmFile, cmLine);
-        std::stringstream ss(cmLine);
-        ss >> std::hex >> color;
-
-        ss.ignore(1, ' ');
-
-        std::getline(ss, name);
-
-        colorMap[name] = color;
-    }
-
-    return colorMap;
-}
-
-std::shared_ptr<System> get_system(const std::string& connection_url, Mavsdk& mavsdk) {
-    mavsdk.set_configuration(Mavsdk::Configuration{1, 135, 1}); // 135 = Lights user component ID
-    ConnectionResult connection_result = mavsdk.add_any_connection(connection_url);
-
-    if (connection_result != ConnectionResult::Success) {
-        std::cerr << "Connection failed: " << connection_result << '\n';
-        return nullptr;
-    }
-
-    auto system = mavsdk.first_autopilot(3.0);
-    if (!system) {
-        std::cerr << "Timed out waiting for system\n";
-        return nullptr;
-    }
-
-    return system.value();
-}
-
-std::pair<std::string, uint32_t> random_color( std::map<std::string, uint32_t> colorMap ) {
-    auto it = colorMap.begin();
-    std::advance(it, rand() % colorMap.size());
-    return *it;
-}

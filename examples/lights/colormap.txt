@@ -773,7 +773,7 @@ A9A9A9 DarkGray
 8B0000 DarkRed
 90EE90 light green
 90EE90 LightGreen
-DC143C crimson
+FF141C crimson
 4B0082 indigo
 808000 olive
 663399 rebecca purple

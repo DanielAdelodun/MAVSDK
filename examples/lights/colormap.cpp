@@ -3,7 +3,8 @@
 #include <sstream>
 #include <map>
 
-std::map<std::string, uint32_t> read_colormap(const std::string& cm_file = "colormap.txt" ) {
+std::map<std::string, uint32_t> read_colormap(const std::string& cm_file = "colormap.txt")
+{
     std::ifstream cmFile(cm_file);
     std::map<std::string, uint32_t> colormap;
 
@@ -26,7 +27,8 @@ std::map<std::string, uint32_t> read_colormap(const std::string& cm_file = "colo
     return colormap;
 }
 
-std::pair<std::string, uint32_t> random_color( std::map<std::string, uint32_t> colormap ) {
+std::pair<std::string, uint32_t> random_color(std::map<std::string, uint32_t> colormap)
+{
     auto it = colormap.begin();
     std::advance(it, rand() % colormap.size());
     return *it;

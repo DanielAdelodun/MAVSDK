@@ -59,33 +59,42 @@ void usage(const std::string& bin_name)
               << "For example, to connect to the simulator use URL: udp://:14540\n";
 }
 
-double add_north(const double origin_lat, const double vector_n) {
+double add_north(const double origin_lat, const double vector_n)
+{
     static constexpr double EARTH_RADIUS = 6371000;
-    return origin_lat + (( vector_n / EARTH_RADIUS ) * 180 / M_PI );
+    return origin_lat + ((vector_n / EARTH_RADIUS) * 180 / M_PI);
 }
 
-double add_east(const double origin_lat, const double origin_lon, const double vector_e) {
+double add_east(const double origin_lat, const double origin_lon, const double vector_e)
+{
     static constexpr double EARTH_RADIUS = 6371000;
-    return origin_lon + (( vector_e / EARTH_RADIUS ) / fabs ( cos( origin_lat / 180 * M_PI )) * 180 / M_PI);
+    return origin_lon +
+           ((vector_e / EARTH_RADIUS) / fabs(cos(origin_lat / 180 * M_PI)) * 180 / M_PI);
 }
 
 void add_distance_direction(
-    const double origin_lat, const double origin_lon, 
-    const double compass_direction, 
+    const double origin_lat,
+    const double origin_lon,
+    const double compass_direction,
     const double distance,
-    double *end_lat, double *end_lon 
-) {
-    const double vector_n = cos( compass_direction / 180 * M_PI ) * distance;
-    const double vector_e = sin( compass_direction / 180 * M_PI ) * distance;
+    double* end_lat,
+    double* end_lon)
+{
+    const double vector_n = cos(compass_direction / 180 * M_PI) * distance;
+    const double vector_e = sin(compass_direction / 180 * M_PI) * distance;
 
     *end_lat = add_north(origin_lat, vector_n);
     *end_lon = add_east(origin_lat, origin_lon, vector_e);
 }
 
-void set_rel_position(const double origin_lat, const double origin_lon, 
-    double *end_lat, double *end_lon, 
-    const double x, const double y 
-) {
+void set_rel_position(
+    const double origin_lat,
+    const double origin_lon,
+    double* end_lat,
+    double* end_lon,
+    const double x,
+    const double y)
+{
     *end_lat = add_north(origin_lat, y);
     *end_lon = add_east(origin_lat, origin_lon, x);
 }
@@ -130,7 +139,6 @@ int main(int argc, char** argv)
 
     std::cout << "System ready\n";
 
-
     auto colormap = read_colormap();
     std::vector<Lights::LightMatrix> matrices(POLYGON);
 
@@ -141,13 +149,9 @@ int main(int argc, char** argv)
 
         Lights::LightMatrix matrix;
 
-        for ( uint8_t i = 0; i < num_strips; i++ ) {
-
+        for (uint8_t i = 0; i < num_strips; i++) {
             std::vector<uint32_t> colors(pixels_per_strip, color);
-            matrix.strips.push_back( 
-                Lights::LightStrip {
-                    .lights = std::move(colors)
-                });
+            matrix.strips.push_back(Lights::LightStrip{.lights = std::move(colors)});
         }
         printf("Side %02d: %s\n", m, colorName.c_str());
         matrices[m] = std::move(matrix);
@@ -166,9 +170,15 @@ int main(int argc, char** argv)
     double polygon_x;
     double polygon_y;
     for (int i = 0; i < POLYGON + 1; i++) {
-        polygon_x = cos ( 2 * M_PI * i*STEP / POLYGON ) * 20;
-        polygon_y = sin ( 2 * M_PI * i*STEP / POLYGON ) * 20;
-        set_rel_position( origin.latitude_deg, origin.longitude_deg, &target_lat, &target_lon, polygon_x, polygon_y );
+        polygon_x = cos(2 * M_PI * i * STEP / POLYGON) * 20;
+        polygon_y = sin(2 * M_PI * i * STEP / POLYGON) * 20;
+        set_rel_position(
+            origin.latitude_deg,
+            origin.longitude_deg,
+            &target_lat,
+            &target_lon,
+            polygon_x,
+            polygon_y);
         mission_items.push_back(make_mission_item(
             target_lat,
             target_lon,
@@ -198,14 +208,14 @@ int main(int argc, char** argv)
     }
     std::cout << "Armed.\n";
 
-
     int32_t mission_current = 0;
     int32_t color_current = 0;
-    mission.subscribe_mission_progress([&mission_current, &color_current](Mission::MissionProgress mission_progress) {
-        std::cout << "Mission status update: " << mission_progress.current << " / "
-                  << mission_progress.total << '\n';
-        mission_current = mission_progress.current;
-    });
+    mission.subscribe_mission_progress(
+        [&mission_current, &color_current](Mission::MissionProgress mission_progress) {
+            std::cout << "Mission status update: " << mission_progress.current << " / "
+                      << mission_progress.total << '\n';
+            mission_current = mission_progress.current;
+        });
 
     Mission::Result start_mission_result = mission.start_mission();
     if (start_mission_result != Mission::Result::Success) {
@@ -215,7 +225,6 @@ int main(int argc, char** argv)
 
     while (!mission.is_mission_finished().second) {
         if (color_current < mission_current) {
-
             lights.set_matrix(matrices[mission_current - 1]);
             color_current = mission_current;
         }

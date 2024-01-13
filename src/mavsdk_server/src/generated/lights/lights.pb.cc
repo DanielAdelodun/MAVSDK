@@ -11,124 +11,30 @@
 #include "google/protobuf/generated_message_reflection.h"
 #include "google/protobuf/reflection_ops.h"
 #include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
 #include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = ::PROTOBUF_NAMESPACE_ID::internal;
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace mavsdk {
 namespace rpc {
 namespace lights {
+
+inline constexpr LightsResult::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : result_str_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        result_{static_cast< ::mavsdk::rpc::lights::LightsResult_Result >(0)},
+        _cached_size_{0} {}
+
 template <typename>
-PROTOBUF_CONSTEXPR SetMatrixRequest::SetMatrixRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.matrix_colors_)*/nullptr} {}
-struct SetMatrixRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetMatrixRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetMatrixRequestDefaultTypeInternal() {}
-  union {
-    SetMatrixRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetMatrixRequestDefaultTypeInternal _SetMatrixRequest_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR SetMatrixResponse::SetMatrixResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.lights_result_)*/nullptr} {}
-struct SetMatrixResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetMatrixResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetMatrixResponseDefaultTypeInternal() {}
-  union {
-    SetMatrixResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetMatrixResponseDefaultTypeInternal _SetMatrixResponse_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR SetStripRequest::SetStripRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.strip_colors_)*/nullptr
-  , /*decltype(_impl_.strip_id_)*/ 0u
-} {}
-struct SetStripRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetStripRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetStripRequestDefaultTypeInternal() {}
-  union {
-    SetStripRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStripRequestDefaultTypeInternal _SetStripRequest_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR SetStripResponse::SetStripResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.lights_result_)*/nullptr} {}
-struct SetStripResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetStripResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetStripResponseDefaultTypeInternal() {}
-  union {
-    SetStripResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStripResponseDefaultTypeInternal _SetStripResponse_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR FollowFlightModeRequest::FollowFlightModeRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.enable_)*/ false
-
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct FollowFlightModeRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR FollowFlightModeRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~FollowFlightModeRequestDefaultTypeInternal() {}
-  union {
-    FollowFlightModeRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FollowFlightModeRequestDefaultTypeInternal _FollowFlightModeRequest_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR FollowFlightModeResponse::FollowFlightModeResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.lights_result_)*/nullptr} {}
-struct FollowFlightModeResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR FollowFlightModeResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~FollowFlightModeResponseDefaultTypeInternal() {}
-  union {
-    FollowFlightModeResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FollowFlightModeResponseDefaultTypeInternal _FollowFlightModeResponse_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR LightsResult::LightsResult(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.result_str_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.result_)*/ 0
-
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+PROTOBUF_CONSTEXPR LightsResult::LightsResult(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
 struct LightsResultDefaultTypeInternal {
   PROTOBUF_CONSTEXPR LightsResultDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~LightsResultDefaultTypeInternal() {}
@@ -139,13 +45,16 @@ struct LightsResultDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsResultDefaultTypeInternal _LightsResult_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR LightStrip::LightStrip(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.lights_)*/ {}
-  ,/* _impl_._lights_cached_byte_size_ = */ { 0 }
 
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+inline constexpr LightStrip::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : lights_{},
+        _lights_cached_byte_size_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR LightStrip::LightStrip(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
 struct LightStripDefaultTypeInternal {
   PROTOBUF_CONSTEXPR LightStripDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~LightStripDefaultTypeInternal() {}
@@ -156,11 +65,92 @@ struct LightStripDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightStripDefaultTypeInternal _LightStrip_default_instance_;
+
+inline constexpr FollowFlightModeRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : enable_{false},
+        _cached_size_{0} {}
+
 template <typename>
-PROTOBUF_CONSTEXPR LightMatrix::LightMatrix(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.strips_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+PROTOBUF_CONSTEXPR FollowFlightModeRequest::FollowFlightModeRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct FollowFlightModeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FollowFlightModeRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FollowFlightModeRequestDefaultTypeInternal() {}
+  union {
+    FollowFlightModeRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FollowFlightModeRequestDefaultTypeInternal _FollowFlightModeRequest_default_instance_;
+
+inline constexpr SetStripResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        lights_result_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SetStripResponse::SetStripResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct SetStripResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetStripResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetStripResponseDefaultTypeInternal() {}
+  union {
+    SetStripResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStripResponseDefaultTypeInternal _SetStripResponse_default_instance_;
+
+inline constexpr SetStripRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        strip_colors_{nullptr},
+        strip_id_{0u} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SetStripRequest::SetStripRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct SetStripRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetStripRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetStripRequestDefaultTypeInternal() {}
+  union {
+    SetStripRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStripRequestDefaultTypeInternal _SetStripRequest_default_instance_;
+
+inline constexpr SetMatrixResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        lights_result_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SetMatrixResponse::SetMatrixResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct SetMatrixResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetMatrixResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetMatrixResponseDefaultTypeInternal() {}
+  union {
+    SetMatrixResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetMatrixResponseDefaultTypeInternal _SetMatrixResponse_default_instance_;
+
+inline constexpr LightMatrix::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : strips_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR LightMatrix::LightMatrix(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
 struct LightMatrixDefaultTypeInternal {
   PROTOBUF_CONSTEXPR LightMatrixDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~LightMatrixDefaultTypeInternal() {}
@@ -171,6 +161,44 @@ struct LightMatrixDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightMatrixDefaultTypeInternal _LightMatrix_default_instance_;
+
+inline constexpr FollowFlightModeResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        lights_result_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR FollowFlightModeResponse::FollowFlightModeResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct FollowFlightModeResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FollowFlightModeResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FollowFlightModeResponseDefaultTypeInternal() {}
+  union {
+    FollowFlightModeResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FollowFlightModeResponseDefaultTypeInternal _FollowFlightModeResponse_default_instance_;
+
+inline constexpr SetMatrixRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        matrix_colors_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SetMatrixRequest::SetMatrixRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct SetMatrixRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetMatrixRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetMatrixRequestDefaultTypeInternal() {}
+  union {
+    SetMatrixRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetMatrixRequestDefaultTypeInternal _SetMatrixRequest_default_instance_;
 }  // namespace lights
 }  // namespace rpc
 }  // namespace mavsdk
@@ -273,15 +301,15 @@ const ::uint32_t TableStruct_lights_2flights_2eproto::offsets[] PROTOBUF_SECTION
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        { 0, 9, -1, sizeof(::mavsdk::rpc::lights::SetMatrixRequest)},
-        { 10, 19, -1, sizeof(::mavsdk::rpc::lights::SetMatrixResponse)},
-        { 20, 30, -1, sizeof(::mavsdk::rpc::lights::SetStripRequest)},
-        { 32, 41, -1, sizeof(::mavsdk::rpc::lights::SetStripResponse)},
-        { 42, -1, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeRequest)},
-        { 51, 60, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeResponse)},
-        { 61, -1, -1, sizeof(::mavsdk::rpc::lights::LightsResult)},
-        { 71, -1, -1, sizeof(::mavsdk::rpc::lights::LightStrip)},
-        { 80, -1, -1, sizeof(::mavsdk::rpc::lights::LightMatrix)},
+        {0, 9, -1, sizeof(::mavsdk::rpc::lights::SetMatrixRequest)},
+        {10, 19, -1, sizeof(::mavsdk::rpc::lights::SetMatrixResponse)},
+        {20, 30, -1, sizeof(::mavsdk::rpc::lights::SetStripRequest)},
+        {32, 41, -1, sizeof(::mavsdk::rpc::lights::SetStripResponse)},
+        {42, -1, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeRequest)},
+        {51, 60, -1, sizeof(::mavsdk::rpc::lights::FollowFlightModeResponse)},
+        {61, -1, -1, sizeof(::mavsdk::rpc::lights::LightsResult)},
+        {71, -1, -1, sizeof(::mavsdk::rpc::lights::LightStrip)},
+        {80, -1, -1, sizeof(::mavsdk::rpc::lights::LightMatrix)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -371,24 +399,14 @@ static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_lights_2flights_2eproto(&
 namespace mavsdk {
 namespace rpc {
 namespace lights {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LightsResult_Result_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_lights_2flights_2eproto);
+const ::google::protobuf::EnumDescriptor* LightsResult_Result_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_lights_2flights_2eproto);
   return file_level_enum_descriptors_lights_2flights_2eproto[0];
 }
+PROTOBUF_CONSTINIT const uint32_t LightsResult_Result_internal_data_[] = {
+    524288u, 0u, };
 bool LightsResult_Result_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-      return true;
-    default:
-      return false;
-  }
+  return 0 <= value && value <= 7;
 }
 #if (__cplusplus < 201703) && \
   (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
@@ -420,59 +438,59 @@ class SetMatrixRequest::_Internal {
   }
 };
 
-const ::mavsdk::rpc::lights::LightMatrix&
-SetMatrixRequest::_Internal::matrix_colors(const SetMatrixRequest* msg) {
+const ::mavsdk::rpc::lights::LightMatrix& SetMatrixRequest::_Internal::matrix_colors(const SetMatrixRequest* msg) {
   return *msg->_impl_.matrix_colors_;
 }
-SetMatrixRequest::SetMatrixRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+SetMatrixRequest::SetMatrixRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.SetMatrixRequest)
 }
-SetMatrixRequest::SetMatrixRequest(const SetMatrixRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SetMatrixRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.matrix_colors_){nullptr}};
+inline PROTOBUF_NDEBUG_INLINE SetMatrixRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.matrix_colors_ = new ::mavsdk::rpc::lights::LightMatrix(*from._impl_.matrix_colors_);
-  }
+SetMatrixRequest::SetMatrixRequest(
+    ::google::protobuf::Arena* arena,
+    const SetMatrixRequest& from)
+    : ::google::protobuf::Message(arena) {
+  SetMatrixRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.matrix_colors_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::mavsdk::rpc::lights::LightMatrix>(arena, *from._impl_.matrix_colors_)
+                : nullptr;
+
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.SetMatrixRequest)
 }
+inline PROTOBUF_NDEBUG_INLINE SetMatrixRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
 inline void SetMatrixRequest::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.matrix_colors_){nullptr}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.matrix_colors_ = {};
 }
-
 SetMatrixRequest::~SetMatrixRequest() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.SetMatrixRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void SetMatrixRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.matrix_colors_;
+  ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.matrix_colors_;
+  _impl_.~Impl_();
 }
 
-void SetMatrixRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void SetMatrixRequest::Clear() {
+PROTOBUF_NOINLINE void SetMatrixRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.SetMatrixRequest)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -483,66 +501,65 @@ void SetMatrixRequest::Clear() {
     _impl_.matrix_colors_->Clear();
   }
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* SetMatrixRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightMatrix matrix_colors = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_matrix_colors(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* SetMatrixRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> SetMatrixRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SetMatrixRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SetMatrixRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // .mavsdk.rpc.lights.LightMatrix matrix_colors = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SetMatrixRequest, _impl_.matrix_colors_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .mavsdk.rpc.lights.LightMatrix matrix_colors = 1;
+    {PROTOBUF_FIELD_OFFSET(SetMatrixRequest, _impl_.matrix_colors_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::mavsdk::rpc::lights::LightMatrix>()},
+  }}, {{
+  }},
+};
 
 ::uint8_t* SetMatrixRequest::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.SetMatrixRequest)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // .mavsdk.rpc.lights.LightMatrix matrix_colors = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::matrix_colors(this),
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, _Internal::matrix_colors(this),
         _Internal::matrix_colors(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.SetMatrixRequest)
   return target;
@@ -559,22 +576,22 @@ failure:
   // .mavsdk.rpc.lights.LightMatrix matrix_colors = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.matrix_colors_);
+    total_size +=
+        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.matrix_colors_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetMatrixRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SetMatrixRequest::MergeImpl
+const ::google::protobuf::Message::ClassData SetMatrixRequest::_class_data_ = {
+    SetMatrixRequest::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetMatrixRequest::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* SetMatrixRequest::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void SetMatrixRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void SetMatrixRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<SetMatrixRequest*>(&to_msg);
   auto& from = static_cast<const SetMatrixRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.SetMatrixRequest)
@@ -586,7 +603,7 @@ void SetMatrixRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
     _this->_internal_mutable_matrix_colors()->::mavsdk::rpc::lights::LightMatrix::MergeFrom(
         from._internal_matrix_colors());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetMatrixRequest::CopyFrom(const SetMatrixRequest& from) {
@@ -596,18 +613,21 @@ void SetMatrixRequest::CopyFrom(const SetMatrixRequest& from) {
   MergeFrom(from);
 }
 
-bool SetMatrixRequest::IsInitialized() const {
+PROTOBUF_NOINLINE bool SetMatrixRequest::IsInitialized() const {
   return true;
 }
 
-void SetMatrixRequest::InternalSwap(SetMatrixRequest* other) {
+::_pbi::CachedSize* SetMatrixRequest::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void SetMatrixRequest::InternalSwap(SetMatrixRequest* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.matrix_colors_, other->_impl_.matrix_colors_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetMatrixRequest::GetMetadata() const {
+::google::protobuf::Metadata SetMatrixRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[0]);
@@ -625,59 +645,59 @@ class SetMatrixResponse::_Internal {
   }
 };
 
-const ::mavsdk::rpc::lights::LightsResult&
-SetMatrixResponse::_Internal::lights_result(const SetMatrixResponse* msg) {
+const ::mavsdk::rpc::lights::LightsResult& SetMatrixResponse::_Internal::lights_result(const SetMatrixResponse* msg) {
   return *msg->_impl_.lights_result_;
 }
-SetMatrixResponse::SetMatrixResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+SetMatrixResponse::SetMatrixResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.SetMatrixResponse)
 }
-SetMatrixResponse::SetMatrixResponse(const SetMatrixResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SetMatrixResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lights_result_){nullptr}};
+inline PROTOBUF_NDEBUG_INLINE SetMatrixResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.lights_result_ = new ::mavsdk::rpc::lights::LightsResult(*from._impl_.lights_result_);
-  }
+SetMatrixResponse::SetMatrixResponse(
+    ::google::protobuf::Arena* arena,
+    const SetMatrixResponse& from)
+    : ::google::protobuf::Message(arena) {
+  SetMatrixResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.lights_result_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(arena, *from._impl_.lights_result_)
+                : nullptr;
+
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.SetMatrixResponse)
 }
+inline PROTOBUF_NDEBUG_INLINE SetMatrixResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
 inline void SetMatrixResponse::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lights_result_){nullptr}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.lights_result_ = {};
 }
-
 SetMatrixResponse::~SetMatrixResponse() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.SetMatrixResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void SetMatrixResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.lights_result_;
+  ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.lights_result_;
+  _impl_.~Impl_();
 }
 
-void SetMatrixResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void SetMatrixResponse::Clear() {
+PROTOBUF_NOINLINE void SetMatrixResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.SetMatrixResponse)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -688,66 +708,65 @@ void SetMatrixResponse::Clear() {
     _impl_.lights_result_->Clear();
   }
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* SetMatrixResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightsResult lights_result = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_lights_result(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* SetMatrixResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> SetMatrixResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SetMatrixResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SetMatrixResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SetMatrixResponse, _impl_.lights_result_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+    {PROTOBUF_FIELD_OFFSET(SetMatrixResponse, _impl_.lights_result_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::mavsdk::rpc::lights::LightsResult>()},
+  }}, {{
+  }},
+};
 
 ::uint8_t* SetMatrixResponse::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.SetMatrixResponse)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::lights_result(this),
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, _Internal::lights_result(this),
         _Internal::lights_result(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.SetMatrixResponse)
   return target;
@@ -764,22 +783,22 @@ failure:
   // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.lights_result_);
+    total_size +=
+        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.lights_result_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetMatrixResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SetMatrixResponse::MergeImpl
+const ::google::protobuf::Message::ClassData SetMatrixResponse::_class_data_ = {
+    SetMatrixResponse::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetMatrixResponse::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* SetMatrixResponse::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void SetMatrixResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void SetMatrixResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<SetMatrixResponse*>(&to_msg);
   auto& from = static_cast<const SetMatrixResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.SetMatrixResponse)
@@ -791,7 +810,7 @@ void SetMatrixResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
     _this->_internal_mutable_lights_result()->::mavsdk::rpc::lights::LightsResult::MergeFrom(
         from._internal_lights_result());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetMatrixResponse::CopyFrom(const SetMatrixResponse& from) {
@@ -801,18 +820,21 @@ void SetMatrixResponse::CopyFrom(const SetMatrixResponse& from) {
   MergeFrom(from);
 }
 
-bool SetMatrixResponse::IsInitialized() const {
+PROTOBUF_NOINLINE bool SetMatrixResponse::IsInitialized() const {
   return true;
 }
 
-void SetMatrixResponse::InternalSwap(SetMatrixResponse* other) {
+::_pbi::CachedSize* SetMatrixResponse::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void SetMatrixResponse::InternalSwap(SetMatrixResponse* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.lights_result_, other->_impl_.lights_result_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetMatrixResponse::GetMetadata() const {
+::google::protobuf::Metadata SetMatrixResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[1]);
@@ -830,64 +852,65 @@ class SetStripRequest::_Internal {
   }
 };
 
-const ::mavsdk::rpc::lights::LightStrip&
-SetStripRequest::_Internal::strip_colors(const SetStripRequest* msg) {
+const ::mavsdk::rpc::lights::LightStrip& SetStripRequest::_Internal::strip_colors(const SetStripRequest* msg) {
   return *msg->_impl_.strip_colors_;
 }
-SetStripRequest::SetStripRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+SetStripRequest::SetStripRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.SetStripRequest)
 }
-SetStripRequest::SetStripRequest(const SetStripRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SetStripRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.strip_colors_){nullptr}
-    , decltype(_impl_.strip_id_) {}
-  };
+inline PROTOBUF_NDEBUG_INLINE SetStripRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.strip_colors_ = new ::mavsdk::rpc::lights::LightStrip(*from._impl_.strip_colors_);
-  }
-  _this->_impl_.strip_id_ = from._impl_.strip_id_;
+SetStripRequest::SetStripRequest(
+    ::google::protobuf::Arena* arena,
+    const SetStripRequest& from)
+    : ::google::protobuf::Message(arena) {
+  SetStripRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.strip_colors_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::mavsdk::rpc::lights::LightStrip>(arena, *from._impl_.strip_colors_)
+                : nullptr;
+  _impl_.strip_id_ = from._impl_.strip_id_;
+
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.SetStripRequest)
 }
+inline PROTOBUF_NDEBUG_INLINE SetStripRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
 inline void SetStripRequest::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.strip_colors_){nullptr}
-    , decltype(_impl_.strip_id_) { 0u }
-
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, strip_colors_),
+           0,
+           offsetof(Impl_, strip_id_) -
+               offsetof(Impl_, strip_colors_) +
+               sizeof(Impl_::strip_id_));
 }
-
 SetStripRequest::~SetStripRequest() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.SetStripRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void SetStripRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.strip_colors_;
+  ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.strip_colors_;
+  _impl_.~Impl_();
 }
 
-void SetStripRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void SetStripRequest::Clear() {
+PROTOBUF_NOINLINE void SetStripRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.SetStripRequest)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -899,63 +922,58 @@ void SetStripRequest::Clear() {
   }
   _impl_.strip_id_ = 0u;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* SetStripRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // uint32 strip_id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          _impl_.strip_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      // .mavsdk.rpc.lights.LightStrip strip_colors = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_strip_colors(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* SetStripRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 0, 2> SetStripRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SetStripRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // .mavsdk.rpc.lights.LightStrip strip_colors = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_.strip_colors_)}},
+    // uint32 strip_id = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetStripRequest, _impl_.strip_id_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_.strip_id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 strip_id = 1;
+    {PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_.strip_id_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+    // .mavsdk.rpc.lights.LightStrip strip_colors = 2;
+    {PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_.strip_colors_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::mavsdk::rpc::lights::LightStrip>()},
+  }}, {{
+  }},
+};
 
 ::uint8_t* SetStripRequest::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.SetStripRequest)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // uint32 strip_id = 1;
   if (this->_internal_strip_id() != 0) {
@@ -967,14 +985,15 @@ failure:
   cached_has_bits = _impl_._has_bits_[0];
   // .mavsdk.rpc.lights.LightStrip strip_colors = 2;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::strip_colors(this),
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        2, _Internal::strip_colors(this),
         _Internal::strip_colors(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.SetStripRequest)
   return target;
@@ -991,9 +1010,8 @@ failure:
   // .mavsdk.rpc.lights.LightStrip strip_colors = 2;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.strip_colors_);
+    total_size +=
+        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.strip_colors_);
   }
 
   // uint32 strip_id = 1;
@@ -1005,14 +1023,15 @@ failure:
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetStripRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SetStripRequest::MergeImpl
+const ::google::protobuf::Message::ClassData SetStripRequest::_class_data_ = {
+    SetStripRequest::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetStripRequest::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* SetStripRequest::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void SetStripRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void SetStripRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<SetStripRequest*>(&to_msg);
   auto& from = static_cast<const SetStripRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.SetStripRequest)
@@ -1027,7 +1046,7 @@ void SetStripRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   if (from._internal_strip_id() != 0) {
     _this->_internal_set_strip_id(from._internal_strip_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetStripRequest::CopyFrom(const SetStripRequest& from) {
@@ -1037,15 +1056,18 @@ void SetStripRequest::CopyFrom(const SetStripRequest& from) {
   MergeFrom(from);
 }
 
-bool SetStripRequest::IsInitialized() const {
+PROTOBUF_NOINLINE bool SetStripRequest::IsInitialized() const {
   return true;
 }
 
-void SetStripRequest::InternalSwap(SetStripRequest* other) {
+::_pbi::CachedSize* SetStripRequest::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void SetStripRequest::InternalSwap(SetStripRequest* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+  ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_.strip_id_)
       + sizeof(SetStripRequest::_impl_.strip_id_)
       - PROTOBUF_FIELD_OFFSET(SetStripRequest, _impl_.strip_colors_)>(
@@ -1053,7 +1075,7 @@ void SetStripRequest::InternalSwap(SetStripRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.strip_colors_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetStripRequest::GetMetadata() const {
+::google::protobuf::Metadata SetStripRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[2]);
@@ -1071,59 +1093,59 @@ class SetStripResponse::_Internal {
   }
 };
 
-const ::mavsdk::rpc::lights::LightsResult&
-SetStripResponse::_Internal::lights_result(const SetStripResponse* msg) {
+const ::mavsdk::rpc::lights::LightsResult& SetStripResponse::_Internal::lights_result(const SetStripResponse* msg) {
   return *msg->_impl_.lights_result_;
 }
-SetStripResponse::SetStripResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+SetStripResponse::SetStripResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.SetStripResponse)
 }
-SetStripResponse::SetStripResponse(const SetStripResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SetStripResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lights_result_){nullptr}};
+inline PROTOBUF_NDEBUG_INLINE SetStripResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.lights_result_ = new ::mavsdk::rpc::lights::LightsResult(*from._impl_.lights_result_);
-  }
+SetStripResponse::SetStripResponse(
+    ::google::protobuf::Arena* arena,
+    const SetStripResponse& from)
+    : ::google::protobuf::Message(arena) {
+  SetStripResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.lights_result_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(arena, *from._impl_.lights_result_)
+                : nullptr;
+
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.SetStripResponse)
 }
+inline PROTOBUF_NDEBUG_INLINE SetStripResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
 inline void SetStripResponse::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lights_result_){nullptr}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.lights_result_ = {};
 }
-
 SetStripResponse::~SetStripResponse() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.SetStripResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void SetStripResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.lights_result_;
+  ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.lights_result_;
+  _impl_.~Impl_();
 }
 
-void SetStripResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void SetStripResponse::Clear() {
+PROTOBUF_NOINLINE void SetStripResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.SetStripResponse)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1134,66 +1156,65 @@ void SetStripResponse::Clear() {
     _impl_.lights_result_->Clear();
   }
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* SetStripResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightsResult lights_result = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_lights_result(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* SetStripResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> SetStripResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SetStripResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SetStripResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SetStripResponse, _impl_.lights_result_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+    {PROTOBUF_FIELD_OFFSET(SetStripResponse, _impl_.lights_result_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::mavsdk::rpc::lights::LightsResult>()},
+  }}, {{
+  }},
+};
 
 ::uint8_t* SetStripResponse::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.SetStripResponse)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::lights_result(this),
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, _Internal::lights_result(this),
         _Internal::lights_result(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.SetStripResponse)
   return target;
@@ -1210,22 +1231,22 @@ failure:
   // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.lights_result_);
+    total_size +=
+        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.lights_result_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetStripResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SetStripResponse::MergeImpl
+const ::google::protobuf::Message::ClassData SetStripResponse::_class_data_ = {
+    SetStripResponse::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetStripResponse::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* SetStripResponse::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void SetStripResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void SetStripResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<SetStripResponse*>(&to_msg);
   auto& from = static_cast<const SetStripResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.SetStripResponse)
@@ -1237,7 +1258,7 @@ void SetStripResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
     _this->_internal_mutable_lights_result()->::mavsdk::rpc::lights::LightsResult::MergeFrom(
         from._internal_lights_result());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetStripResponse::CopyFrom(const SetStripResponse& from) {
@@ -1247,18 +1268,21 @@ void SetStripResponse::CopyFrom(const SetStripResponse& from) {
   MergeFrom(from);
 }
 
-bool SetStripResponse::IsInitialized() const {
+PROTOBUF_NOINLINE bool SetStripResponse::IsInitialized() const {
   return true;
 }
 
-void SetStripResponse::InternalSwap(SetStripResponse* other) {
+::_pbi::CachedSize* SetStripResponse::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void SetStripResponse::InternalSwap(SetStripResponse* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.lights_result_, other->_impl_.lights_result_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetStripResponse::GetMetadata() const {
+::google::protobuf::Metadata SetStripResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[3]);
@@ -1269,97 +1293,89 @@ class FollowFlightModeRequest::_Internal {
  public:
 };
 
-FollowFlightModeRequest::FollowFlightModeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+FollowFlightModeRequest::FollowFlightModeRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.FollowFlightModeRequest)
 }
-FollowFlightModeRequest::FollowFlightModeRequest(const FollowFlightModeRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.FollowFlightModeRequest)
+FollowFlightModeRequest::FollowFlightModeRequest(
+    ::google::protobuf::Arena* arena, const FollowFlightModeRequest& from)
+    : FollowFlightModeRequest(arena) {
+  MergeFrom(from);
 }
+inline PROTOBUF_NDEBUG_INLINE FollowFlightModeRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
 inline void FollowFlightModeRequest::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.enable_) { false }
-
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.enable_ = {};
 }
-
 FollowFlightModeRequest::~FollowFlightModeRequest() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.FollowFlightModeRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void FollowFlightModeRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
 }
 
-void FollowFlightModeRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void FollowFlightModeRequest::Clear() {
+PROTOBUF_NOINLINE void FollowFlightModeRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.FollowFlightModeRequest)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.enable_ = false;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* FollowFlightModeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // bool enable = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          _impl_.enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* FollowFlightModeRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> FollowFlightModeRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_FollowFlightModeRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // bool enable = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(FollowFlightModeRequest, _impl_.enable_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(FollowFlightModeRequest, _impl_.enable_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bool enable = 1;
+    {PROTOBUF_FIELD_OFFSET(FollowFlightModeRequest, _impl_.enable_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
 ::uint8_t* FollowFlightModeRequest::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.FollowFlightModeRequest)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // bool enable = 1;
   if (this->_internal_enable() != 0) {
@@ -1369,8 +1385,9 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.FollowFlightModeRequest)
   return target;
@@ -1392,14 +1409,15 @@ failure:
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FollowFlightModeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    FollowFlightModeRequest::MergeImpl
+const ::google::protobuf::Message::ClassData FollowFlightModeRequest::_class_data_ = {
+    FollowFlightModeRequest::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FollowFlightModeRequest::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* FollowFlightModeRequest::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void FollowFlightModeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void FollowFlightModeRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<FollowFlightModeRequest*>(&to_msg);
   auto& from = static_cast<const FollowFlightModeRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.FollowFlightModeRequest)
@@ -1410,7 +1428,7 @@ void FollowFlightModeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg
   if (from._internal_enable() != 0) {
     _this->_internal_set_enable(from._internal_enable());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void FollowFlightModeRequest::CopyFrom(const FollowFlightModeRequest& from) {
@@ -1420,18 +1438,20 @@ void FollowFlightModeRequest::CopyFrom(const FollowFlightModeRequest& from) {
   MergeFrom(from);
 }
 
-bool FollowFlightModeRequest::IsInitialized() const {
+PROTOBUF_NOINLINE bool FollowFlightModeRequest::IsInitialized() const {
   return true;
 }
 
-void FollowFlightModeRequest::InternalSwap(FollowFlightModeRequest* other) {
+::_pbi::CachedSize* FollowFlightModeRequest::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void FollowFlightModeRequest::InternalSwap(FollowFlightModeRequest* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
-  swap(_impl_.enable_, other->_impl_.enable_);
+        swap(_impl_.enable_, other->_impl_.enable_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata FollowFlightModeRequest::GetMetadata() const {
+::google::protobuf::Metadata FollowFlightModeRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[4]);
@@ -1449,59 +1469,59 @@ class FollowFlightModeResponse::_Internal {
   }
 };
 
-const ::mavsdk::rpc::lights::LightsResult&
-FollowFlightModeResponse::_Internal::lights_result(const FollowFlightModeResponse* msg) {
+const ::mavsdk::rpc::lights::LightsResult& FollowFlightModeResponse::_Internal::lights_result(const FollowFlightModeResponse* msg) {
   return *msg->_impl_.lights_result_;
 }
-FollowFlightModeResponse::FollowFlightModeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+FollowFlightModeResponse::FollowFlightModeResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.FollowFlightModeResponse)
 }
-FollowFlightModeResponse::FollowFlightModeResponse(const FollowFlightModeResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  FollowFlightModeResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lights_result_){nullptr}};
+inline PROTOBUF_NDEBUG_INLINE FollowFlightModeResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.lights_result_ = new ::mavsdk::rpc::lights::LightsResult(*from._impl_.lights_result_);
-  }
+FollowFlightModeResponse::FollowFlightModeResponse(
+    ::google::protobuf::Arena* arena,
+    const FollowFlightModeResponse& from)
+    : ::google::protobuf::Message(arena) {
+  FollowFlightModeResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.lights_result_ = (cached_has_bits & 0x00000001u)
+                ? CreateMaybeMessage<::mavsdk::rpc::lights::LightsResult>(arena, *from._impl_.lights_result_)
+                : nullptr;
+
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.FollowFlightModeResponse)
 }
+inline PROTOBUF_NDEBUG_INLINE FollowFlightModeResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
 inline void FollowFlightModeResponse::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lights_result_){nullptr}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.lights_result_ = {};
 }
-
 FollowFlightModeResponse::~FollowFlightModeResponse() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.FollowFlightModeResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void FollowFlightModeResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.lights_result_;
+  ABSL_DCHECK(GetArena() == nullptr);
+  delete _impl_.lights_result_;
+  _impl_.~Impl_();
 }
 
-void FollowFlightModeResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void FollowFlightModeResponse::Clear() {
+PROTOBUF_NOINLINE void FollowFlightModeResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.FollowFlightModeResponse)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1512,66 +1532,65 @@ void FollowFlightModeResponse::Clear() {
     _impl_.lights_result_->Clear();
   }
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* FollowFlightModeResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightsResult lights_result = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_lights_result(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
+const char* FollowFlightModeResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> FollowFlightModeResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(FollowFlightModeResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_FollowFlightModeResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(FollowFlightModeResponse, _impl_.lights_result_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .mavsdk.rpc.lights.LightsResult lights_result = 1;
+    {PROTOBUF_FIELD_OFFSET(FollowFlightModeResponse, _impl_.lights_result_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::mavsdk::rpc::lights::LightsResult>()},
+  }}, {{
+  }},
+};
 
 ::uint8_t* FollowFlightModeResponse::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.FollowFlightModeResponse)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::lights_result(this),
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, _Internal::lights_result(this),
         _Internal::lights_result(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.FollowFlightModeResponse)
   return target;
@@ -1588,22 +1607,22 @@ failure:
   // .mavsdk.rpc.lights.LightsResult lights_result = 1;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.lights_result_);
+    total_size +=
+        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.lights_result_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FollowFlightModeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    FollowFlightModeResponse::MergeImpl
+const ::google::protobuf::Message::ClassData FollowFlightModeResponse::_class_data_ = {
+    FollowFlightModeResponse::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FollowFlightModeResponse::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* FollowFlightModeResponse::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void FollowFlightModeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void FollowFlightModeResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<FollowFlightModeResponse*>(&to_msg);
   auto& from = static_cast<const FollowFlightModeResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.FollowFlightModeResponse)
@@ -1615,7 +1634,7 @@ void FollowFlightModeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_ms
     _this->_internal_mutable_lights_result()->::mavsdk::rpc::lights::LightsResult::MergeFrom(
         from._internal_lights_result());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void FollowFlightModeResponse::CopyFrom(const FollowFlightModeResponse& from) {
@@ -1625,18 +1644,21 @@ void FollowFlightModeResponse::CopyFrom(const FollowFlightModeResponse& from) {
   MergeFrom(from);
 }
 
-bool FollowFlightModeResponse::IsInitialized() const {
+PROTOBUF_NOINLINE bool FollowFlightModeResponse::IsInitialized() const {
   return true;
 }
 
-void FollowFlightModeResponse::InternalSwap(FollowFlightModeResponse* other) {
+::_pbi::CachedSize* FollowFlightModeResponse::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void FollowFlightModeResponse::InternalSwap(FollowFlightModeResponse* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.lights_result_, other->_impl_.lights_result_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata FollowFlightModeResponse::GetMetadata() const {
+::google::protobuf::Metadata FollowFlightModeResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[5]);
@@ -1647,132 +1669,115 @@ class LightsResult::_Internal {
  public:
 };
 
-LightsResult::LightsResult(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+LightsResult::LightsResult(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightsResult)
 }
-LightsResult::LightsResult(const LightsResult& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  LightsResult* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.result_str_) {}
+inline PROTOBUF_NDEBUG_INLINE LightsResult::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : result_str_(arena, from.result_str_),
+        _cached_size_{0} {}
 
-    , decltype(_impl_.result_) {}
+LightsResult::LightsResult(
+    ::google::protobuf::Arena* arena,
+    const LightsResult& from)
+    : ::google::protobuf::Message(arena) {
+  LightsResult* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  _impl_.result_ = from._impl_.result_;
 
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.result_str_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.result_str_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_result_str().empty()) {
-    _this->_impl_.result_str_.Set(from._internal_result_str(), _this->GetArenaForAllocation());
-  }
-  _this->_impl_.result_ = from._impl_.result_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightsResult)
 }
+inline PROTOBUF_NDEBUG_INLINE LightsResult::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : result_str_(arena),
+        _cached_size_{0} {}
 
 inline void LightsResult::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.result_str_) {}
-
-    , decltype(_impl_.result_) { 0 }
-
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.result_str_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.result_str_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.result_ = {};
 }
-
 LightsResult::~LightsResult() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightsResult)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void LightsResult::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArena() == nullptr);
   _impl_.result_str_.Destroy();
+  _impl_.~Impl_();
 }
 
-void LightsResult::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void LightsResult::Clear() {
+PROTOBUF_NOINLINE void LightsResult::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightsResult)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.result_str_.ClearToEmpty();
   _impl_.result_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* LightsResult::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .mavsdk.rpc.lights.LightsResult.Result result = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::int32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-          _internal_set_result(static_cast<::mavsdk::rpc::lights::LightsResult_Result>(val));
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      // string result_str = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_result_str();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mavsdk.rpc.lights.LightsResult.result_str"));
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* LightsResult::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 49, 2> LightsResult::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_LightsResult_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // string result_str = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(LightsResult, _impl_.result_str_)}},
+    // .mavsdk.rpc.lights.LightsResult.Result result = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(LightsResult, _impl_.result_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(LightsResult, _impl_.result_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .mavsdk.rpc.lights.LightsResult.Result result = 1;
+    {PROTOBUF_FIELD_OFFSET(LightsResult, _impl_.result_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string result_str = 2;
+    {PROTOBUF_FIELD_OFFSET(LightsResult, _impl_.result_str_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\36\0\12\0\0\0\0\0"
+    "mavsdk.rpc.lights.LightsResult"
+    "result_str"
+  }},
+};
 
 ::uint8_t* LightsResult::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightsResult)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // .mavsdk.rpc.lights.LightsResult.Result result = 1;
   if (this->_internal_result() != 0) {
@@ -1784,14 +1789,15 @@ failure:
   // string result_str = 2;
   if (!this->_internal_result_str().empty()) {
     const std::string& _s = this->_internal_result_str();
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "mavsdk.rpc.lights.LightsResult.result_str");
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "mavsdk.rpc.lights.LightsResult.result_str");
     target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightsResult)
   return target;
@@ -1807,7 +1813,7 @@ failure:
 
   // string result_str = 2;
   if (!this->_internal_result_str().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                     this->_internal_result_str());
   }
 
@@ -1820,14 +1826,15 @@ failure:
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightsResult::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    LightsResult::MergeImpl
+const ::google::protobuf::Message::ClassData LightsResult::_class_data_ = {
+    LightsResult::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightsResult::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* LightsResult::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void LightsResult::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void LightsResult::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<LightsResult*>(&to_msg);
   auto& from = static_cast<const LightsResult&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightsResult)
@@ -1841,7 +1848,7 @@ void LightsResult::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (from._internal_result() != 0) {
     _this->_internal_set_result(from._internal_result());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LightsResult::CopyFrom(const LightsResult& from) {
@@ -1851,21 +1858,23 @@ void LightsResult::CopyFrom(const LightsResult& from) {
   MergeFrom(from);
 }
 
-bool LightsResult::IsInitialized() const {
+PROTOBUF_NOINLINE bool LightsResult::IsInitialized() const {
   return true;
 }
 
-void LightsResult::InternalSwap(LightsResult* other) {
+::_pbi::CachedSize* LightsResult::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void LightsResult::InternalSwap(LightsResult* PROTOBUF_RESTRICT other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.result_str_, lhs_arena,
-                                       &other->_impl_.result_str_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.result_str_, &other->_impl_.result_str_, arena);
   swap(_impl_.result_, other->_impl_.result_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata LightsResult::GetMetadata() const {
+::google::protobuf::Metadata LightsResult::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[6]);
@@ -1876,121 +1885,118 @@ class LightStrip::_Internal {
  public:
 };
 
-LightStrip::LightStrip(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+LightStrip::LightStrip(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightStrip)
 }
-LightStrip::LightStrip(const LightStrip& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  LightStrip* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.lights_) { from._impl_.lights_ }
-    ,/* _impl_._lights_cached_byte_size_ = */ { 0 }
+inline PROTOBUF_NDEBUG_INLINE LightStrip::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : lights_{visibility, arena, from.lights_},
+        _lights_cached_byte_size_{0},
+        _cached_size_{0} {}
 
-    , /*decltype(_impl_._cached_size_)*/{}};
+LightStrip::LightStrip(
+    ::google::protobuf::Arena* arena,
+    const LightStrip& from)
+    : ::google::protobuf::Message(arena) {
+  LightStrip* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightStrip)
 }
+inline PROTOBUF_NDEBUG_INLINE LightStrip::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : lights_{visibility, arena},
+        _lights_cached_byte_size_{0},
+        _cached_size_{0} {}
 
 inline void LightStrip::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.lights_) { arena }
-    ,/* _impl_._lights_cached_byte_size_ = */ { 0 }
-
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
 }
-
 LightStrip::~LightStrip() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightStrip)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void LightStrip::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.lights_.~RepeatedField();
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
 }
 
-void LightStrip::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void LightStrip::Clear() {
+PROTOBUF_NOINLINE void LightStrip::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightStrip)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_lights()->Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _impl_.lights_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* LightStrip::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated uint32 lights = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_lights(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<::uint8_t>(tag) == 8) {
-          _internal_add_lights(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* LightStrip::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> LightStrip::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_LightStrip_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated uint32 lights = 1;
+    {::_pbi::TcParser::FastV32P1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(LightStrip, _impl_.lights_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated uint32 lights = 1;
+    {PROTOBUF_FIELD_OFFSET(LightStrip, _impl_.lights_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kPackedUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
 ::uint8_t* LightStrip::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightStrip)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // repeated uint32 lights = 1;
   {
     int byte_size = _impl_._lights_cached_byte_size_.Get();
     if (byte_size > 0) {
-      target = stream->WriteUInt32Packed(1, _internal_lights(),
-                                                 byte_size, target);
+      target = stream->WriteUInt32Packed(
+          1, _internal_lights(), byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightStrip)
   return target;
@@ -2017,18 +2023,18 @@ failure:
     ;
     total_size += tag_size + data_size;
   }
-
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightStrip::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    LightStrip::MergeImpl
+const ::google::protobuf::Message::ClassData LightStrip::_class_data_ = {
+    LightStrip::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightStrip::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* LightStrip::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void LightStrip::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void LightStrip::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<LightStrip*>(&to_msg);
   auto& from = static_cast<const LightStrip&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightStrip)
@@ -2036,8 +2042,8 @@ void LightStrip::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PRO
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.lights_.MergeFrom(from._impl_.lights_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_mutable_lights()->MergeFrom(from._internal_lights());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LightStrip::CopyFrom(const LightStrip& from) {
@@ -2047,17 +2053,20 @@ void LightStrip::CopyFrom(const LightStrip& from) {
   MergeFrom(from);
 }
 
-bool LightStrip::IsInitialized() const {
+PROTOBUF_NOINLINE bool LightStrip::IsInitialized() const {
   return true;
 }
 
-void LightStrip::InternalSwap(LightStrip* other) {
+::_pbi::CachedSize* LightStrip::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void LightStrip::InternalSwap(LightStrip* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.lights_.InternalSwap(&other->_impl_.lights_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata LightStrip::GetMetadata() const {
+::google::protobuf::Metadata LightStrip::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[7]);
@@ -2068,118 +2077,115 @@ class LightMatrix::_Internal {
  public:
 };
 
-LightMatrix::LightMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+LightMatrix::LightMatrix(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.lights.LightMatrix)
 }
-LightMatrix::LightMatrix(const LightMatrix& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  LightMatrix* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.strips_){from._impl_.strips_}
-    , /*decltype(_impl_._cached_size_)*/{}};
+inline PROTOBUF_NDEBUG_INLINE LightMatrix::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : strips_{visibility, arena, from.strips_},
+        _cached_size_{0} {}
 
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+LightMatrix::LightMatrix(
+    ::google::protobuf::Arena* arena,
+    const LightMatrix& from)
+    : ::google::protobuf::Message(arena) {
+  LightMatrix* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.lights.LightMatrix)
 }
+inline PROTOBUF_NDEBUG_INLINE LightMatrix::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : strips_{visibility, arena},
+        _cached_size_{0} {}
 
 inline void LightMatrix::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.strips_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+  new (&_impl_) Impl_(internal_visibility(), arena);
 }
-
 LightMatrix::~LightMatrix() {
   // @@protoc_insertion_point(destructor:mavsdk.rpc.lights.LightMatrix)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
 inline void LightMatrix::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  _internal_mutable_strips()->~RepeatedPtrField();
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
 }
 
-void LightMatrix::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void LightMatrix::Clear() {
+PROTOBUF_NOINLINE void LightMatrix::Clear() {
 // @@protoc_insertion_point(message_clear_start:mavsdk.rpc.lights.LightMatrix)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_strips()->Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _impl_.strips_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* LightMatrix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_strips(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
+const char* LightMatrix::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
 }
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> LightMatrix::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_LightMatrix_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(LightMatrix, _impl_.strips_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
+    {PROTOBUF_FIELD_OFFSET(LightMatrix, _impl_.strips_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::mavsdk::rpc::lights::LightStrip>()},
+  }}, {{
+  }},
+};
 
 ::uint8_t* LightMatrix::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.lights.LightMatrix)
   ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // repeated .mavsdk.rpc.lights.LightStrip strips = 1;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_strips_size()); i < n; i++) {
-    const auto& repfield = this->_internal_strips(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+    const auto& repfield = this->_internal_strips().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.lights.LightMatrix)
   return target;
@@ -2197,20 +2203,20 @@ failure:
   total_size += 1UL * this->_internal_strips_size();
   for (const auto& msg : this->_internal_strips()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LightMatrix::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    LightMatrix::MergeImpl
+const ::google::protobuf::Message::ClassData LightMatrix::_class_data_ = {
+    LightMatrix::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LightMatrix::GetClassData() const { return &_class_data_; }
+const ::google::protobuf::Message::ClassData* LightMatrix::GetClassData() const {
+  return &_class_data_;
+}
 
-
-void LightMatrix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+void LightMatrix::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<LightMatrix*>(&to_msg);
   auto& from = static_cast<const LightMatrix&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.lights.LightMatrix)
@@ -2218,8 +2224,9 @@ void LightMatrix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_strips()->MergeFrom(from._internal_strips());
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_mutable_strips()->MergeFrom(
+      from._internal_strips());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LightMatrix::CopyFrom(const LightMatrix& from) {
@@ -2229,17 +2236,20 @@ void LightMatrix::CopyFrom(const LightMatrix& from) {
   MergeFrom(from);
 }
 
-bool LightMatrix::IsInitialized() const {
+PROTOBUF_NOINLINE bool LightMatrix::IsInitialized() const {
   return true;
 }
 
-void LightMatrix::InternalSwap(LightMatrix* other) {
+::_pbi::CachedSize* LightMatrix::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void LightMatrix::InternalSwap(LightMatrix* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _internal_mutable_strips()->InternalSwap(other->_internal_mutable_strips());
+  _impl_.strips_.InternalSwap(&other->_impl_.strips_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata LightMatrix::GetMetadata() const {
+::google::protobuf::Metadata LightMatrix::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_lights_2flights_2eproto_getter, &descriptor_table_lights_2flights_2eproto_once,
       file_level_metadata_lights_2flights_2eproto[8]);
@@ -2248,43 +2258,9 @@ void LightMatrix::InternalSwap(LightMatrix* other) {
 }  // namespace lights
 }  // namespace rpc
 }  // namespace mavsdk
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::SetMatrixRequest*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::SetMatrixRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::SetMatrixRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::SetMatrixResponse*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::SetMatrixResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::SetMatrixResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::SetStripRequest*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::SetStripRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::SetStripRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::SetStripResponse*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::SetStripResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::SetStripResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::FollowFlightModeRequest*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::FollowFlightModeRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::FollowFlightModeRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::FollowFlightModeResponse*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::FollowFlightModeResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::FollowFlightModeResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightsResult*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightsResult >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightsResult >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightStrip*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightStrip >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightStrip >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mavsdk::rpc::lights::LightMatrix*
-Arena::CreateMaybeMessage< ::mavsdk::rpc::lights::LightMatrix >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mavsdk::rpc::lights::LightMatrix >(arena);
-}
-PROTOBUF_NAMESPACE_CLOSE
+namespace google {
+namespace protobuf {
+}  // namespace protobuf
+}  // namespace google
 // @@protoc_insertion_point(global_scope)
 #include "google/protobuf/port_undef.inc"

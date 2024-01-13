@@ -18,7 +18,8 @@ std::shared_ptr<System> get_system(const std::string& connection_url, Mavsdk& ma
 static constexpr uint8_t pixels_per_strip = 20;
 static uint8_t num_strips = 4;
 
-void usage(const std::string& bin_name) {
+void usage(const std::string& bin_name)
+{
     std::cerr << "Usage : " << bin_name << " <connection_url> [<num_strip>]\n"
               << "Connection URL format should be :\n"
               << " For TCP : tcp://[server_host][:server_port]\n"
@@ -27,7 +28,8 @@ void usage(const std::string& bin_name) {
               << "For example, to connect to the simulator use URL: udp://:14540\n";
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
     if (argc != 2 && argc != 3) {
         usage(argv[0]);
         return 1;
@@ -59,18 +61,14 @@ int main(int argc, char** argv) {
 
     while (true) {
         Lights::LightMatrix matrix;
-        
-        for ( uint8_t i = 0; i < num_strips; i++ ) {
 
+        for (uint8_t i = 0; i < num_strips; i++) {
             auto colorPair = random_color(colorMap);
             auto colorName = colorPair.first;
             auto color = colorPair.second;
 
             std::vector<uint32_t> colors(pixels_per_strip, color);
-            matrix.strips.push_back( 
-                Lights::LightStrip {
-                    .lights = std::move(colors)
-                });
+            matrix.strips.push_back(Lights::LightStrip{.lights = std::move(colors)});
 
             printf("Strip %02d: %s\n", i, colorName.c_str());
         }
@@ -86,5 +84,3 @@ int main(int argc, char** argv) {
 
     return 0;
 }
-
-

@@ -15,6 +15,7 @@ geofence
 gimbal
 gripper
 info
+lights
 log_files
 log_streaming
 manual_control

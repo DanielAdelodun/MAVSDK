@@ -9,12 +9,13 @@ list(APPEND CMAKE_ARGS
     "-DMAVLINK_DIALECT=${MAVLINK_DIALECT}"
     )
 
-set(MAVLINK_GIT_HASH 3ca42d6cdab73122d9c677f88e64882ef2b0dde8)
+set(MAVLINK_GIT_REPO https://github.com/DanielAdelodun/mavlink)
+set(MAVLINK_GIT_HASH 817d90966fa17427b5694897a54b13879e0a15fb)
 
 if(IOS)
     ExternalProject_add(
         mavlink
-        GIT_REPOSITORY https://github.com/mavlink/mavlink
+        GIT_REPOSITORY ${MAVLINK_GIT_REPO}
         GIT_TAG ${MAVLINK_GIT_HASH}
         PREFIX mavlink
         PATCH_COMMAND git checkout .
@@ -31,7 +32,7 @@ if(IOS)
 else()
     ExternalProject_add(
         mavlink
-        GIT_REPOSITORY https://github.com/mavlink/mavlink
+        GIT_REPOSITORY ${MAVLINK_GIT_REPO}
         GIT_TAG ${MAVLINK_GIT_HASH}
         PREFIX mavlink
         PATCH_COMMAND git checkout . && git apply ${PROJECT_SOURCE_DIR}/mavlink.patch

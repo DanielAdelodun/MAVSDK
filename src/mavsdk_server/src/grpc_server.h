@@ -99,6 +99,11 @@
 #include "info/info_service_impl.h"
 #endif
 
+#ifdef LIGHTS_ENABLED
+#include "plugins/lights/lights.h"
+#include "lights/lights_service_impl.h"
+#endif
+
 #ifdef LOG_FILES_ENABLED
 #include "plugins/log_files/log_files.h"
 #include "log_files/log_files_service_impl.h"
@@ -285,6 +290,11 @@ public:
 #ifdef INFO_ENABLED
         _info_lazy_plugin(mavsdk),
         _info_service(_info_lazy_plugin),
+#endif
+
+#ifdef LIGHTS_ENABLED
+        _lights_lazy_plugin(mavsdk),
+        _lights_service(_lights_lazy_plugin),
 #endif
 
 #ifdef LOG_FILES_ENABLED
@@ -511,6 +521,13 @@ private:
     LazyPlugin<Info> _info_lazy_plugin;
 
     InfoServiceImpl<> _info_service;
+#endif
+
+#ifdef LIGHTS_ENABLED
+
+    LazyPlugin<Lights> _lights_lazy_plugin;
+
+    LightsServiceImpl<> _lights_service;
 #endif
 
 #ifdef LOG_FILES_ENABLED

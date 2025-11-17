@@ -9,48 +9,32 @@
 
 namespace mavsdk {
 
-
 using LightStrip = Lights::LightStrip;
 using LightMatrix = Lights::LightMatrix;
 
-
-
 Lights::Lights(System& system) : PluginBase(), _impl{std::make_unique<LightsImpl>(system)} {}
 
-Lights::Lights(std::shared_ptr<System> system) : PluginBase(), _impl{std::make_unique<LightsImpl>(system)} {}
-
+Lights::Lights(std::shared_ptr<System> system) :
+    PluginBase(),
+    _impl{std::make_unique<LightsImpl>(system)}
+{}
 
 Lights::~Lights() {}
-
-
-
-
 
 Lights::Result Lights::set_matrix(LightMatrix matrix_colors) const
 {
     return _impl->set_matrix(matrix_colors);
 }
 
-
-
-
-
 Lights::Result Lights::set_strip(uint32_t strip_id, LightStrip strip_colors) const
 {
     return _impl->set_strip(strip_id, strip_colors);
 }
 
-
-
-
-
 Lights::Result Lights::follow_flight_mode(uint32_t strip_id) const
 {
     return _impl->follow_flight_mode(strip_id);
 }
-
-
-
 
 std::ostream& operator<<(std::ostream& str, Lights::Result const& result)
 {
@@ -63,10 +47,6 @@ std::ostream& operator<<(std::ostream& str, Lights::Result const& result)
             return str << "No System";
         case Lights::Result::ConnectionError:
             return str << "Connection Error";
-        case Lights::Result::Busy:
-            return str << "Busy";
-        case Lights::Result::OutOfBounds:
-            return str << "Out Of Bounds";
         case Lights::Result::Timeout:
             return str << "Timeout";
         case Lights::Result::Failed:
@@ -76,18 +56,15 @@ std::ostream& operator<<(std::ostream& str, Lights::Result const& result)
     }
 }
 
-
 bool operator==(const Lights::LightStrip& lhs, const Lights::LightStrip& rhs)
 {
-    return
-        (rhs.lights == lhs.lights);
+    return (rhs.lights == lhs.lights);
 }
 
 std::ostream& operator<<(std::ostream& str, Lights::LightStrip const& light_strip)
 {
     str << std::setprecision(15);
-    str << "light_strip:" << '\n'
-        << "{\n";
+    str << "light_strip:" << '\n' << "{\n";
     str << "    lights: [";
     for (auto it = light_strip.lights.begin(); it != light_strip.lights.end(); ++it) {
         str << *it;
@@ -97,18 +74,15 @@ std::ostream& operator<<(std::ostream& str, Lights::LightStrip const& light_stri
     return str;
 }
 
-
 bool operator==(const Lights::LightMatrix& lhs, const Lights::LightMatrix& rhs)
 {
-    return
-        (rhs.strips == lhs.strips);
+    return (rhs.strips == lhs.strips);
 }
 
 std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_matrix)
 {
     str << std::setprecision(15);
-    str << "light_matrix:" << '\n'
-        << "{\n";
+    str << "light_matrix:" << '\n' << "{\n";
     str << "    strips: [";
     for (auto it = light_matrix.strips.begin(); it != light_matrix.strips.end(); ++it) {
         str << *it;
@@ -117,8 +91,5 @@ std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_mat
     str << '}';
     return str;
 }
-
-
-
 
 } // namespace mavsdk

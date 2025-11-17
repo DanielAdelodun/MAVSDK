@@ -99,10 +99,8 @@ enum LightsResult_Result : int {
   LightsResult_Result_RESULT_SUCCESS = 1,
   LightsResult_Result_RESULT_NO_SYSTEM = 2,
   LightsResult_Result_RESULT_CONNECTION_ERROR = 3,
-  LightsResult_Result_RESULT_BUSY = 4,
-  LightsResult_Result_RESULT_OUT_OF_BOUNDS = 5,
-  LightsResult_Result_RESULT_TIMEOUT = 6,
-  LightsResult_Result_RESULT_FAILED = 7,
+  LightsResult_Result_RESULT_TIMEOUT = 4,
+  LightsResult_Result_RESULT_FAILED = 5,
   LightsResult_Result_LightsResult_Result_INT_MIN_SENTINEL_DO_NOT_USE_ =
       std::numeric_limits<::int32_t>::min(),
   LightsResult_Result_LightsResult_Result_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -112,8 +110,8 @@ enum LightsResult_Result : int {
 bool LightsResult_Result_IsValid(int value);
 extern const uint32_t LightsResult_Result_internal_data_[];
 constexpr LightsResult_Result LightsResult_Result_Result_MIN = static_cast<LightsResult_Result>(0);
-constexpr LightsResult_Result LightsResult_Result_Result_MAX = static_cast<LightsResult_Result>(7);
-constexpr int LightsResult_Result_Result_ARRAYSIZE = 7 + 1;
+constexpr LightsResult_Result LightsResult_Result_Result_MAX = static_cast<LightsResult_Result>(5);
+constexpr int LightsResult_Result_Result_ARRAYSIZE = 5 + 1;
 const ::google::protobuf::EnumDescriptor*
 LightsResult_Result_descriptor();
 template <typename T>
@@ -126,7 +124,7 @@ const std::string& LightsResult_Result_Name(T value) {
 template <>
 inline const std::string& LightsResult_Result_Name(LightsResult_Result value) {
   return ::google::protobuf::internal::NameOfDenseEnum<LightsResult_Result_descriptor,
-                                                 0, 7>(
+                                                 0, 5>(
       static_cast<int>(value));
 }
 inline bool LightsResult_Result_Parse(absl::string_view name, LightsResult_Result* value) {
@@ -288,8 +286,6 @@ class LightsResult final
   static constexpr Result RESULT_SUCCESS = LightsResult_Result_RESULT_SUCCESS;
   static constexpr Result RESULT_NO_SYSTEM = LightsResult_Result_RESULT_NO_SYSTEM;
   static constexpr Result RESULT_CONNECTION_ERROR = LightsResult_Result_RESULT_CONNECTION_ERROR;
-  static constexpr Result RESULT_BUSY = LightsResult_Result_RESULT_BUSY;
-  static constexpr Result RESULT_OUT_OF_BOUNDS = LightsResult_Result_RESULT_OUT_OF_BOUNDS;
   static constexpr Result RESULT_TIMEOUT = LightsResult_Result_RESULT_TIMEOUT;
   static constexpr Result RESULT_FAILED = LightsResult_Result_RESULT_FAILED;
   static inline bool Result_IsValid(int value) {

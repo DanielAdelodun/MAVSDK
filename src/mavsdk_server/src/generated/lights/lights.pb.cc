@@ -394,25 +394,24 @@ const char descriptor_table_protodef_lights_2flights_2eproto[] ABSL_ATTRIBUTE_SE
     ".lights.LightsResult\"+\n\027FollowFlightMode"
     "Request\022\020\n\010strip_id\030\001 \001(\r\"R\n\030FollowFligh"
     "tModeResponse\0226\n\rlights_result\030\001 \001(\0132\037.m"
-    "avsdk.rpc.lights.LightsResult\"\222\002\n\014Lights"
+    "avsdk.rpc.lights.LightsResult\"\347\001\n\014Lights"
     "Result\0226\n\006result\030\001 \001(\0162&.mavsdk.rpc.ligh"
     "ts.LightsResult.Result\022\022\n\nresult_str\030\002 \001"
-    "(\t\"\265\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RES"
+    "(\t\"\212\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RES"
     "ULT_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027R"
-    "ESULT_CONNECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020"
-    "\004\022\030\n\024RESULT_OUT_OF_BOUNDS\020\005\022\022\n\016RESULT_TI"
-    "MEOUT\020\006\022\021\n\rRESULT_FAILED\020\007\"\034\n\nLightStrip"
-    "\022\016\n\006lights\030\001 \003(\r\"<\n\013LightMatrix\022-\n\006strip"
-    "s\030\001 \003(\0132\035.mavsdk.rpc.lights.LightStrip2\273"
-    "\002\n\rLightsService\022\\\n\tSetMatrix\022#.mavsdk.r"
-    "pc.lights.SetMatrixRequest\032$.mavsdk.rpc."
-    "lights.SetMatrixResponse\"\004\200\265\030\001\022Y\n\010SetStr"
-    "ip\022\".mavsdk.rpc.lights.SetStripRequest\032#"
-    ".mavsdk.rpc.lights.SetStripResponse\"\004\200\265\030"
-    "\001\022q\n\020FollowFlightMode\022*.mavsdk.rpc.light"
-    "s.FollowFlightModeRequest\032+.mavsdk.rpc.l"
-    "ights.FollowFlightModeResponse\"\004\200\265\030\001B\037\n\020"
-    "io.mavsdk.lightsB\013LightsProtob\006proto3"
+    "ESULT_CONNECTION_ERROR\020\003\022\022\n\016RESULT_TIMEO"
+    "UT\020\004\022\021\n\rRESULT_FAILED\020\005\"\034\n\nLightStrip\022\016\n"
+    "\006lights\030\001 \003(\r\"<\n\013LightMatrix\022-\n\006strips\030\001"
+    " \003(\0132\035.mavsdk.rpc.lights.LightStrip2\273\002\n\r"
+    "LightsService\022\\\n\tSetMatrix\022#.mavsdk.rpc."
+    "lights.SetMatrixRequest\032$.mavsdk.rpc.lig"
+    "hts.SetMatrixResponse\"\004\200\265\030\001\022Y\n\010SetStrip\022"
+    "\".mavsdk.rpc.lights.SetStripRequest\032#.ma"
+    "vsdk.rpc.lights.SetStripResponse\"\004\200\265\030\001\022q"
+    "\n\020FollowFlightMode\022*.mavsdk.rpc.lights.F"
+    "ollowFlightModeRequest\032+.mavsdk.rpc.ligh"
+    "ts.FollowFlightModeResponse\"\004\200\265\030\001B\037\n\020io."
+    "mavsdk.lightsB\013LightsProtob\006proto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_lights_2flights_2eproto_deps[1] =
     {
@@ -422,7 +421,7 @@ static ::absl::once_flag descriptor_table_lights_2flights_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_lights_2flights_2eproto = {
     false,
     false,
-    1237,
+    1194,
     descriptor_table_protodef_lights_2flights_2eproto,
     "lights/lights.proto",
     &descriptor_table_lights_2flights_2eproto_once,
@@ -443,9 +442,9 @@ const ::google::protobuf::EnumDescriptor* LightsResult_Result_descriptor() {
   return file_level_enum_descriptors_lights_2flights_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t LightsResult_Result_internal_data_[] = {
-    524288u, 0u, };
+    393216u, 0u, };
 bool LightsResult_Result_IsValid(int value) {
-  return 0 <= value && value <= 7;
+  return 0 <= value && value <= 5;
 }
 #if (__cplusplus < 201703) && \
   (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
@@ -454,8 +453,6 @@ constexpr LightsResult_Result LightsResult::RESULT_UNKNOWN;
 constexpr LightsResult_Result LightsResult::RESULT_SUCCESS;
 constexpr LightsResult_Result LightsResult::RESULT_NO_SYSTEM;
 constexpr LightsResult_Result LightsResult::RESULT_CONNECTION_ERROR;
-constexpr LightsResult_Result LightsResult::RESULT_BUSY;
-constexpr LightsResult_Result LightsResult::RESULT_OUT_OF_BOUNDS;
 constexpr LightsResult_Result LightsResult::RESULT_TIMEOUT;
 constexpr LightsResult_Result LightsResult::RESULT_FAILED;
 constexpr LightsResult_Result LightsResult::Result_MIN;

@@ -2,7 +2,6 @@
 
 namespace mavsdk {
 
-
 LightsImpl::LightsImpl(System& system) : PluginImplBase(system)
 {
     _system_impl->register_plugin(this);
@@ -13,27 +12,18 @@ LightsImpl::LightsImpl(std::shared_ptr<System> system) : PluginImplBase(std::mov
     _system_impl->register_plugin(this);
 }
 
-
 LightsImpl::~LightsImpl()
 {
-
     _system_impl->unregister_plugin(this);
-
 }
 
 void LightsImpl::init() {}
 
 void LightsImpl::deinit() {}
 
-
 void LightsImpl::enable() {}
 
 void LightsImpl::disable() {}
-
-
-
-
-
 
 Lights::Result LightsImpl::set_matrix(const Lights::LightMatrix matrix)
 {
@@ -47,10 +37,6 @@ Lights::Result LightsImpl::set_matrix(const Lights::LightMatrix matrix)
 
     return Lights::Result::Success;
 }
-
-
-
-
 
 Lights::Result LightsImpl::set_strip(uint32_t strip_id, const Lights::LightStrip strip)
 {
@@ -124,10 +110,6 @@ Lights::Result LightsImpl::set_strip(uint32_t strip_id, const Lights::LightStrip
     return Lights::Result::Success;
 }
 
-
-
-
-
 Lights::Result LightsImpl::follow_flight_mode(uint32_t strip_id)
 {
     uint32_t c[8]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -151,8 +133,5 @@ Lights::Result LightsImpl::follow_flight_mode(uint32_t strip_id)
                Lights::Result::Success :
                Lights::Result::ConnectionError;
 }
-
-
-
 
 } // namespace mavsdk

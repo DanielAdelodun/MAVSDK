@@ -13,22 +13,20 @@
 #include <utility>
 #include <vector>
 
-
 #include "plugin_base.h"
 
 #include "handle.h"
 
 namespace mavsdk {
 
-
-class System;class LightsImpl;
+class System;
+class LightsImpl;
 
 /**
- * @brief 
+ * @brief
  */
 class Lights : public PluginBase {
 public:
-
     /**
      * @brief Constructor. Creates the plugin for a specific System.
      *
@@ -55,16 +53,10 @@ public:
      */
     explicit Lights(std::shared_ptr<System> system); // new
 
-
     /**
      * @brief Destructor (internal use only).
      */
     ~Lights() override;
-
-
-
-
-
 
     /**
      * @brief Possible results returned for light requests
@@ -74,8 +66,6 @@ public:
         Success, /**< @brief Request succeeded. */
         NoSystem, /**< @brief No system is connected. */
         ConnectionError, /**< @brief Connection error. */
-        Busy, /**< @brief Vehicle is busy. */
-        OutOfBounds, /**< @brief Strip or Light index out of bounds. */
         Timeout, /**< @brief Request timed out. */
         Failed, /**< @brief Request failed. */
     };
@@ -87,15 +77,10 @@ public:
      */
     friend std::ostream& operator<<(std::ostream& str, Lights::Result const& result);
 
-
-
-
-
     /**
-     * @brief 
+     * @brief
      */
     struct LightStrip {
-        
         std::vector<uint32_t> lights{}; /**< @brief */
     };
 
@@ -113,14 +98,10 @@ public:
      */
     friend std::ostream& operator<<(std::ostream& str, Lights::LightStrip const& light_strip);
 
-
-
-
     /**
-     * @brief 
+     * @brief
      */
     struct LightMatrix {
-        
         std::vector<LightStrip> strips{}; /**< @brief */
     };
 
@@ -138,62 +119,43 @@ public:
      */
     friend std::ostream& operator<<(std::ostream& str, Lights::LightMatrix const& light_matrix);
 
-
     /**
      * @brief Callback type for asynchronous Lights calls.
      */
     using ResultCallback = std::function<void(Result)>;
-
-
-
-
-
 
     /**
      * @brief Set all lights to the given colors.
      *
      * This function is blocking.
      *
-     
+
      * @return Result of request.
-     
+
      */
     Result set_matrix(LightMatrix matrix_colors) const;
-
-
-
-
-
 
     /**
      * @brief Set the lights on a given strip to the given colors.
      *
      * This function is blocking.
      *
-     
+
      * @return Result of request.
-     
+
      */
     Result set_strip(uint32_t strip_id, LightStrip strip_colors) const;
-
-
-
-
-
 
     /**
      * @brief Set whether the lights should follow the flight mode.
      *
      * This function is blocking.
      *
-     
+
      * @return Result of request.
-     
+
      */
     Result follow_flight_mode(uint32_t strip_id) const;
-
-
-
 
     /**
      * @brief Copy constructor.
